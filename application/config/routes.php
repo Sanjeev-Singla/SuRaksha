@@ -8,6 +8,9 @@ $route['translate_uri_dashes'] = FALSE;
 $route['default_controller'] = 'welcome';
 $route['home'] = "public/home/home";
 
+/* Services */
+$route['services'] = "public/services";
+
 /* Admin */
 $route['admin'] = "admin/admin";
 $route['admin/login'] = "admin/admin/login";
