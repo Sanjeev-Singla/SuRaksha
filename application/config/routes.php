@@ -11,6 +11,19 @@ $route['home'] = "public/home/home";
 /* Services */
 $route['services'] = "public/services";
 
+
+/* Properties */
+$route['properties'] = "public/properties";
+
+/* About */
+$route['about'] = "public/about";
+
+/* Blog */
+$route['blog'] = "public/blog";
+
+/* Contact */
+$route['contact'] = "public/contact";
+
 /* Admin */
 $route['admin'] = "admin/admin";
 $route['admin/login'] = "admin/admin/login";
