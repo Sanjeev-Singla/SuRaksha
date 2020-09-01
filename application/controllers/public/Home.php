@@ -8,9 +8,11 @@ class Home extends MY_Controller {
 
 	}
 
-	 public function index($load_view,$title="",$data = []){
+	 public function index($load_view,$title="", $description="", $keyword="", $data = []){
         $data['data'] = $data;
         $header['title'] = $title;
+        $header['description'] = $description;
+        $header['keyword'] = $keyword;
         $this->load->view('public/common/header',$header);
         $this->load->view('public/templates/'.$load_view,$data);
         $this->load->view('public/common/footer');
