@@ -16,7 +16,12 @@
  					<li class="nav-item"><a href="<?= base_url('properties')?>" class="nav-link">Properties</a></li>
  					<li class="nav-item"><a href="<?= base_url('blog')?>" class="nav-link">Blog</a></li>
  					<li class="nav-item"><a href="<?= base_url('contact')?>" class="nav-link">Contact</a></li>
- 				</ul>
+					<?php if ($this->session->userdata('user_id')) { ?>
+						<li class="nav-item"><a href="<?= base_url('logout')?>" class="nav-link">Logout</a></li> 
+					<?php } else { ?>
+						<li class="nav-item"><a href="<?= base_url('register')?>" class="nav-link">Register</a></li>
+					<?php } ?>
+					
  			</div>
  		</div>
  	</nav>
