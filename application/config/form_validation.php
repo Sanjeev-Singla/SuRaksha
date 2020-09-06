@@ -80,7 +80,7 @@ $config = array(
         ),
         array(
             'field' => 'email',
-            'rules' => 'trim|required',
+            'rules' => 'trim|required|valid_email',
             'errors' => array(
                 'required' => 'Please enter your %s.',
             ),
@@ -100,10 +100,4 @@ $config = array(
             ),
         ),
     )
-  
-    
-    
-
-
-   
 );
