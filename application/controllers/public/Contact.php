@@ -40,6 +40,4 @@ class Contact extends MY_Controller {
             $this->index('contact','Su-Raksha - Contact');
         }
     }
-    
-    
 }

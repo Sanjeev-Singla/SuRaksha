@@ -10,7 +10,7 @@
     <script src="<?=base_url()?>assets/admin/js/bootstrap.min.js"></script>
     <script src="<?=base_url('assets/admin/js/main.js')?>"></script>
     <script src="<?= base_url() ?>assets/admin/js/jquery.toast.min.js"></script>
-    <script src="<?= base_url() ?>assets/admin/js/custom.js"></script>
+    <script src="<?= base_url() ?>assets/admin/common/js/custom.js"></script>
 
     <!-- The javascript plugin to display page loading on top-->
     <script src="<?=base_url()?>assets/admin/js/plugins/pace.min.js"></script>

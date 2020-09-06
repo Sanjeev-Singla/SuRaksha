@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**********************PUBLIC******************************/
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-
 /* Home */
 $route['default_controller'] = 'welcome';
 $route['home'] = "public/home/home";
@@ -28,9 +28,14 @@ $route['register'] = "user/users/register";
 $route['login'] = "user/users/login";
 $route['logout'] = "user/common/logout";
 
-/* Admin */
+
+
+/***************************** Admin ***************************/
 $route['admin'] = "admin/admin";
 $route['admin/login'] = "admin/admin/login";
 $route['admin/home'] = "admin/home/home";
+/*Contact*/
 $route['admin/contact'] = "admin/home/contact";
+$route['admin/contact/(:num)'] = "admin/home/contact_details/$1";
+
 $route['admin/logout'] = "admin/home/logout";

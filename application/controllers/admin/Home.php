@@ -18,8 +18,7 @@ class Home extends MY_Controller {
     }
     
     public function home(){
-        $this->index('home');
-       
+        $this->index('home');  
     }
 
     public function contact(){
@@ -27,8 +26,11 @@ class Home extends MY_Controller {
         $this->index('contact',$data);
     }
 
-    
-    
+    public function contact_details($id){
+        $data = $this->global_model->select_single("contact",["id"=>$id]);
+        echo json_encode($data);
+    }
+
     public function logout(){
         $this->session->sess_destroy();
         _redirect("admin");
