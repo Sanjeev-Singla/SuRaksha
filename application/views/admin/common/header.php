@@ -95,9 +95,9 @@ td a {
       <ul class="app-menu">
            <ul class="app-menu">
         <li><a class="app-menu__item active" href="<?= base_url('admin/home') ?>"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-user"></i><span class="app-menu__label">Anything</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-user"></i><span class="app-menu__label">Contacts</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href="<?= base_url('admin/') ?>"><i class="icon fa fa-plus"></i>Add Here</a></li>
+            <li><a class="treeview-item" href="<?= base_url('admin/contact') ?>"><i class="icon fa fa-plus"></i>Contact</a></li>
             <li><a class="treeview-item" href="<?= base_url('admin/') ?>"><i class="icon fa fa-plus"></i>Add Here</a></li>
           </ul>
         </li>

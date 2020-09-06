@@ -53,9 +53,9 @@ $config = array(
         )
     ),
 
-    "user_sigin" => array(
+    "signin" => array(
         array(
-            'field' => 'phone',
+            'field' => 'email',
             'rules' => 'trim|required',
             'errors' => array(
                 'required' => 'Please enter your %s.',
@@ -63,6 +63,37 @@ $config = array(
         ),
         array(
             'field' => 'password',
+            'rules' => 'trim|required',
+            'errors' => array(
+                'required' => 'Please enter your %s.',
+            ),
+        ),
+    ),
+
+    "contact" => array(
+        array(
+            'field' => 'name',
+            'rules' => 'trim|required',
+            'errors' => array(
+                'required' => 'Please enter your %s.',
+            ),
+        ),
+        array(
+            'field' => 'email',
+            'rules' => 'trim|required',
+            'errors' => array(
+                'required' => 'Please enter your %s.',
+            ),
+        ),
+        array(
+            'field' => 'subject',
+            'rules' => 'trim|required',
+            'errors' => array(
+                'required' => 'Please enter your %s.',
+            ),
+        ),
+        array(
+            'field' => 'message',
             'rules' => 'trim|required',
             'errors' => array(
                 'required' => 'Please enter your %s.',

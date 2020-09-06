@@ -48,22 +48,25 @@ class Users extends MY_Controller {
 
     public function login(){
         if ($data = $this->input->post()) {
-            $data['password'] = sha1($this->input->post('password'));
+           $data['password'] = sha1("encrypt".$data['password']);
             $this->form_validation->set_error_delimiters("<p class='text-danger'>","</p>");
-            if ($this->form_validation->run('user_signin') == FALSE) {
+            if ($this->form_validation->run('signin') == FALSE) {
                   $this->index('login');
             }else{
                 if ($user_data = $this->global_model->select_single('users',['email'=>$data['email']])) {
                     if ($data['password'] == $user_data['password']) {
                         $this->_set_userdata('user_id', $user_data['id']);
-                        echo "<script>alert('login Successfully');</script>"; 
-                        _redirect('/');
+                        $this->_msg('alert', 'Login Successfully');
+                        $this->_class('alert_class', 'success');
+                        _redirect('login');
                     }else{
-                        echo "<script>alert('Incorrect Password');</script>";
+                        $this->_msg('alert', 'Incorrect E-mail');
+                        $this->_class('alert_class', 'danger');
                         _redirect_pre();
                     }
                 } else {
-                     echo "<script>alert('Incorrect Email');</script>";
+                    $this->_msg('alert', 'Incorrect Password');
+                    $this->_class('alert_class', 'danger');
                     _redirect_pre();
                 }
             }

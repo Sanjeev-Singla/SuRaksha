@@ -16,7 +16,6 @@
 		<div class="row block-9 justify-content-center mb-5">
 			<div class="col-md-8 mb-md-5">
 				<h2 class="text-center">Register Here</h2>
-
 				<?php if ($this->session->flashdata('alert')): ?>
 					<div class="col-lg-6">
 						<div class="bs-component">
@@ -26,7 +25,6 @@
 						</div>
 					</div>
 				<?php endif;?>
-
 				<form action="<?= base_url('register') ?>" method="POST" class="bg-light p-5 contact-form">
 					<div class="form-group">
 						<input type="text" class="form-control" name="first_name" value="<?= set_value('first_name')?>" placeholder="Your Name" required>
@@ -77,13 +75,13 @@
 						<div class="icon">
 							<span class="fa fa-phone"></span>
 						</div>
-						<p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+						<p><span>Phone:</span> <a href="tel://1234567920">+91 7973640255</a></p>
 					</div>
 					<div class="col-md-4 text-center py-4">
 						<div class="icon">
 							<span class="fa fa-paper-plane"></span>
 						</div>
-						<p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+						<p><span>Email:</span> <a href="mailto:info@yoursite.com">sumit013pathania@gmail.com</a></p>
 					</div>
 				</div>
 			</div>

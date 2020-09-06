@@ -22,6 +22,11 @@ class Home extends MY_Controller {
        
     }
 
+    public function contact(){
+        $data=$this->global_model->get_all('contact');
+        $this->index('contact',$data);
+    }
+
     
     
     public function logout(){

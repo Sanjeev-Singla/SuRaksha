@@ -15,7 +15,7 @@
  					<li class="nav-item"><a href="<?= base_url('services')?>" class="nav-link">Services</a></li>
  					<li class="nav-item"><a href="<?= base_url('properties')?>" class="nav-link">Properties</a></li>
  					<li class="nav-item"><a href="<?= base_url('blog')?>" class="nav-link">Blog</a></li>
- 					<li class="nav-item"><a href="<?= base_url('contact')?>" class="nav-link">Contact</a></li>
+ 					<li class="nav-item"><a href="<?= base_url('contact')?>" class="nav-link">Contact Us</a></li>
 					<?php if ($this->session->userdata('user_id')) { ?>
 						<li class="nav-item"><a href="<?= base_url('logout')?>" class="nav-link">Logout</a></li> 
 					<?php } else { ?>

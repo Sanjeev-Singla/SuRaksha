@@ -34,12 +34,12 @@ class Admin extends MY_Controller {
                     }else{
                         $this->_msg('alert', 'Incorrect Password.');
                         $this->_class('alert_class', 'red');
-                        _redirect_pre();
+                        _redirect_pre('admin/login');
                     }
                 } else {
                     $this->_msg('alert', 'Incorrect Username.');
                     $this->_class('alert_class', 'red');
-                    _redirect_pre();
+                    _redirect_pre('admin/login');
                 }
             }
         }else{

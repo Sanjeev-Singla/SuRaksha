@@ -21,7 +21,7 @@ $route['about'] = "public/about";
 $route['blog'] = "public/blog";
 
 /* Contact */
-$route['contact'] = "public/contact";
+$route['contact'] = "public/contact/contact";
 
 /* Users */
 $route['register'] = "user/users/register";
@@ -31,6 +31,6 @@ $route['logout'] = "user/common/logout";
 /* Admin */
 $route['admin'] = "admin/admin";
 $route['admin/login'] = "admin/admin/login";
-
 $route['admin/home'] = "admin/home/home";
+$route['admin/contact'] = "admin/home/contact";
 $route['admin/logout'] = "admin/home/logout";
