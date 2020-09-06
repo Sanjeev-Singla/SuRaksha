@@ -25,6 +25,8 @@ $route['contact'] = "public/contact";
 
 /* Users */
 $route['register'] = "user/users/register";
+$route['login'] = "user/users/login";
+$route['logout'] = "user/common/logout";
 
 /* Admin */
 $route['admin'] = "admin/admin";

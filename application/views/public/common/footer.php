@@ -90,13 +90,6 @@
     
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 
-   <!-- Essential javascripts for application to work-->
-    <script src="<?=base_url()?>assets/admin/js/jquery-3.2.1.min.js"></script>
-    <script src="<?=base_url()?>assets/admin/js/popper.min.js"></script>
-    <script src="<?=base_url()?>assets/admin/js/bootstrap.min.js"></script>
-    <script src="<?=base_url('assets/admin/js/main.js')?>"></script>
-    <script src="<?= base_url() ?>assets/admin/js/jquery.toast.min.js"></script>
-    <script src="<?= base_url() ?>assets/admin/js/custom.js"></script>
-
+  
   </body>
 </html>
