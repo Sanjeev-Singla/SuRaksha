@@ -25,14 +25,14 @@ class Users extends MY_Controller {
         if($data=$this->input->post()){
            $this->form_validation->set_error_delimiters("<p class='text-danger'>","</p>");
            if ($this->form_validation->run('user_register') == FALSE) {
-                $this->index('register','Su-Raksha - Register',);
+                $this->index('register','Su-Raksha - Register');
             }else{
                 $data['password'] = sha1("encrypt".$data['password']);
                 $data['ip'] = $this->input->ip_address();
                 unset($data['confirm_password']);
                 $add=$this->global_model->add('users', $data);
                 if($add){
-                    $this->_msg('alert', 'Please try later');
+                    $this->_msg('alert', 'Your are Registered Successfully');
                     $this->_class('alert_class', 'success');
                     _redirect('register');
                 }else{
@@ -42,7 +42,7 @@ class Users extends MY_Controller {
                 }
             }
         }else{
-            $this->index('register');
+            $this->index('register','Su-Raksha - Register');
         }
     }
 
@@ -71,9 +71,4 @@ class Users extends MY_Controller {
              $this->index('login');
         }
     }
-
-
-
-
-
 }
