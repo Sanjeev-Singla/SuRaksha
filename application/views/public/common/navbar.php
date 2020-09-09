@@ -6,16 +6,17 @@
  			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
  				<span class="oi oi-menu"></span> Menu
  			</button>
-
+ 			<?php
+ 				$url_value = $this->uri->segment(1);
+ 			?>
  			<div class="collapse navbar-collapse" id="ftco-nav">
  				<ul class="navbar-nav ml-auto">
- 					<li class="nav-item active"><a href="<?= base_url('/')?>" class="nav-link">Home</a></li>
- 					<li class="nav-item"><a href="<?= base_url('about')?>" class="nav-link">About</a></li>
- 					<li class="nav-item"><a href="<?= base_url('agent')?>" class="nav-link">Agent</a></li>
- 					<li class="nav-item"><a href="<?= base_url('services')?>" class="nav-link">Services</a></li>
- 					<li class="nav-item"><a href="<?= base_url('properties')?>" class="nav-link">Properties</a></li>
- 					<li class="nav-item"><a href="<?= base_url('blog')?>" class="nav-link">Blog</a></li>
- 					<li class="nav-item"><a href="<?= base_url('contact')?>" class="nav-link">Contact Us</a></li>
+ 					<li class="nav-item <?= ($url_value=='home')?"active":""?>"><a href="<?= base_url('/')?>" class="nav-link">Home</a></li>
+ 					<li class="nav-item  <?= ($url_value=='about')?"active":""?>"><a href="<?= base_url('about')?>" class="nav-link">About</a></li>
+ 					<li class="nav-item <?= ($url_value=='services')?"active":""?>"><a href="<?= base_url('services')?>" class="nav-link">Services</a></li>
+ 					<li class="nav-item <?= ($url_value=='properties')?"active":""?> "><a href="<?= base_url('properties')?>" class="nav-link">Properties</a></li>
+ 					<li class="nav-item <?= ($url_value=='blog')?"active":""?>"><a href="<?= base_url('blog')?>" class="nav-link">Blog</a></li>
+ 					<li class="nav-item <?= ($url_value=='contact')?"active":""?>"><a href="<?= base_url('contact')?>" class="nav-link">Contact Us</a></li>
 					<?php if ($this->session->userdata('user_id')) { ?>
 						<li class="nav-item"><a href="<?= base_url('logout')?>" class="nav-link">Logout</a></li> 
 					<?php } else { ?>
