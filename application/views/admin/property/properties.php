@@ -1,4 +1,8 @@
-
+<style type="text/css">
+  .select2-container{
+    width: 100% !important;
+  }
+</style>
 <main class="app-content">
   <div class="app-title">
     <div>
@@ -14,7 +18,10 @@
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <h3 class="tile-title">Table Hover</h3>
+        <button type="button" class="btn btn-primary pull-right mb-4" data-toggle="modal" data-target="#exampleModal">
+          <i class="fa fa-plus-circle"></i> Add Property
+        </button>
+
         <table class="table table-hover">
           <thead>
             <tr>
@@ -53,22 +60,83 @@
       </div>
     </div>
   </div>
-</main>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="contact_us_subject">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id="contact_us_message"></div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <fomr action="" method="POST">
+            <div class="form-group" id="property_type">
+              <label for="exampleSelect1">Property For</label>
+              <select class="form-control" name="property_type" id="exampleSelect1">
+                <option value="">Please Select Your Property Type</option>
+                <option value="Residencial">Residencial</option>
+                <option value="Official">Official</option>
+                <option value="Commercial">Commercial</option>
+              </select>
+            </div>
+
+            <div class="form-group" id="residential_type">
+              <label for="exampleSelect1">Residential Type</label>
+              <select class="form-control" id="exampleSelect1">
+                <option value="">Please Select Your Residential Type</option>
+                <option value="Plot">Plot</option>
+                <option value="Flat">Flat</option>
+                <option value="House">House</option>
+              </select>
+            </div>
+
+            <div class="form-group" id="flat_type">
+              <label for="exampleSelect1">Flat Type</label>
+              <select class="form-control" id="exampleSelect1">
+                <option value="">Please Select Your Flat Type</option>
+                <option value="Fully Furnished">Fully Furnished</option>
+                <option value="Semi Furnished">Semi Furnished</option>
+                <option value="Raw">Raw</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">BHK</label>
+              <input class="form-control" id="flat_bhks" id="exampleInputEmail1" type="text" aria-describedby="emailHelp" placeholder="Enter BHKs">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Property Size</label>
+              <input class="form-control" id="property_size" id="exampleInputEmail1" type="text" aria-describedby="emailHelp" placeholder="Property Size">
+            </div>
+
+            <label for="exampleInputEmail1">Select Aminities</label>
+            <select class="form-control" name="aminites" id="demoSelect" multiple="">
+              <optgroup label="Select Aminities">
+                <option>Ahmedabad</option>
+                <option>Surat</option>
+                <option>Vadodara</option>
+                <option>Rajkot</option>
+                <option>Kapadwanj</option>
+              </optgroup>
+            </select>
+
+            <div class="form-group">
+              <label for="exampleTextarea">Description</label>
+              <textarea class="form-control" name="description" id="exampleTextarea" rows="3"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+</main>
+

@@ -1,22 +1,12 @@
 </main>
-    <!-- DataTable -->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src='<?= base_url()?>assets/admin/js/datatable/init.js'></script>
-    <!-- END DataTable -->
-
-    <!-- Essential javascripts for application to work-->
     <script src="<?=base_url()?>assets/admin/js/jquery-3.2.1.min.js"></script>
     <script src="<?=base_url()?>assets/admin/js/popper.min.js"></script>
     <script src="<?=base_url()?>assets/admin/js/bootstrap.min.js"></script>
     <script src="<?=base_url('assets/admin/js/main.js')?>"></script>
+    <script src="<?=base_url()?>assets/admin/js/plugins/pace.min.js"></script>
+    <script src="<?=base_url()?>assets/admin/js/plugins/select2.min.js"></script>
     <script src="<?= base_url() ?>assets/admin/js/jquery.toast.min.js"></script>
     <script src="<?= base_url() ?>assets/admin/common/js/custom.js"></script>
-
-    <!-- The javascript plugin to display page loading on top-->
-    <script src="<?=base_url()?>assets/admin/js/plugins/pace.min.js"></script>
-    <!-- Page specific javascripts-->
-    <script type="text/javascript" src="<?=base_url()?>assets/admin/js/plugins/chart.js"></script>
-    <!-- Google analytics script-->
   </body>
    <?php
     if ($message = $this->session->flashdata('alert')) {
@@ -35,6 +25,7 @@
             var icon_show = "<?= $icon ?>";
             var heading_show = "<?= $heading ?>";
             $(document).ready(function () {
+                
                 $.toast({
                     text: message,
                     heading: heading_show,
