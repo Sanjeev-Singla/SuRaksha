@@ -47,13 +47,27 @@ class Property extends MY_Controller {
 
             
         }else{
-            $this->index('properties');
+            $data['properties'] = [];
+            $data["aminities"]=$this->global_model->get_all('aminities');
+            $this->index('properties',$data);
         }
     }
 
     public function aminity(){
-         $data=$this->global_model->get_all('aminities');
-        $this->index('aminity',$data);
+        if ($data = $this->input->post()) {
+            $result = $this->global_model->add('aminities',$data);
+            if ($result) {
+                $this->_class('alert_class','green');
+                $this->_msg('alert',"Adminity Added Successfully");
+            }else{
+                $this->_class('alert_class','red');
+                $this->_msg('alert',"Unable to Add Aminity!");
+            }
+            _redirect_pre();
+        }else{
+            $data=$this->global_model->get_all('aminities');
+            $this->index('aminity',$data);
+        }
     }
     
 }

@@ -14,7 +14,9 @@
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <h3 class="tile-title">Table Hover</h3>
+        <button type="button" class="btn btn-primary pull-right mb-4" data-toggle="modal" data-target="#exampleModal">
+          <i class="fa fa-plus-circle"></i> Add Aminity
+        </button>
         <table class="table table-hover">
           <thead>
             <tr>
@@ -59,7 +61,17 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" id="contact_us_message"></div>
+      <div class="modal-body" id="contact_us_message">
+
+        <form action="" method="POST">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Aminity</label>
+            <input class="form-control" id="aminities" name="aminities" type="text" aria-describedby="emailHelp" placeholder="Enter Aminity" required="">
+          </div>
+          <button type="submit" class="btn btn-primary">Save Aminity</button>
+        </form>
+
+      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>

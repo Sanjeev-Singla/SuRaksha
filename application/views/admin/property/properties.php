@@ -33,7 +33,7 @@
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($data as $value): ?>
+            <?php foreach ($data['properties'] as $value): ?>
               <tr>
                 <td><?=$value['name']?></td>
                 <td><?=$value['email']?></td>
@@ -135,11 +135,9 @@
                 <label for="exampleInputEmail1">Select Aminities</label>
                 <select class="form-control" name="aminites[]" id="demoSelect" multiple="">
                   <optgroup label="Select Aminities">
-                    <option>Ahmedabad</option>
-                    <option>Surat</option>
-                    <option>Vadodara</option>
-                    <option>Rajkot</option>
-                    <option>Kapadwanj</option>
+                    <?php foreach($data['aminities'] as $aminity): ?>
+                      <option class="<?= $aminity['id']?>"><?= $aminity['aminities'] ?></option>
+                    <?php endforeach; ?>
                   </optgroup>
                 </select>
               </div>
