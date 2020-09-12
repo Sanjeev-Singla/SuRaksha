@@ -72,7 +72,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="" method="POST">
+          <form action="" method="POST" enctype="multipart/form-data">
             <div class="form-group" id="property_type">
               <label for="exampleSelect1">Property For</label>
               <select class="form-control" name="property_type" id="exampleSelect1">
@@ -133,7 +133,7 @@
             <div class="form-group">
               <div id="flat_aminities">
                 <label for="exampleInputEmail1">Select Aminities</label>
-                <select class="form-control" name="aminites" id="demoSelect" multiple="">
+                <select class="form-control" name="aminites[]" id="demoSelect" multiple="">
                   <optgroup label="Select Aminities">
                     <option>Ahmedabad</option>
                     <option>Surat</option>
@@ -152,7 +152,7 @@
 
             <div class="form-group">
               <label for="exampleInputFile">Upload Image</label>
-              <input class="form-control-file" id="exampleInputFile" type="file" name="images" aria-describedby="fileHelp" multiple="">
+              <input class="form-control-file" id="exampleInputFile" type="file" name="images[]" aria-describedby="fileHelp" multiple="">
               <small class="form-text text-muted" id="fileHelp">Please Upload Only jpg,jpeg,png Extensions</small>
             </div>
 
