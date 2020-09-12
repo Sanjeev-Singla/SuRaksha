@@ -25,26 +25,28 @@
         <table class="table table-hover">
           <thead>
             <tr>
+              <th>#</th>
               <th>Title</th>
               <th>Property Type</th>
               <th>Residence Type</th>
               <th>Sale/Rent</th>
               <th>Location</th>
               <th>Price</th>
-              <th>Action</th>
+              <th class="text-center">Action</th>
             </tr>
           </thead>
           <tbody>
             <?php if(!empty($data['properties'])):?>
               <?php foreach ($data['properties'] as $value): ?>
                 <tr>
+                  <td><?=$value['id']?></td>
                   <td><?=word_limiter($value['property_title'],5)?></td>
                   <td><?=$value['property_type']?></td>
                   <td><?=$value['residence_type']?></td>
                   <td><?=$value['sale_rent']?></td>
                   <td><?=$value['location']?></td>
                   <td><?=$value['price']?></td>
-                  <td>
+                  <td class="text-center">
                     <a href="" class="btn btn-secondary btn-sm"><i class="fa fa-eye text-white"></i></a>
                     <a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit text-white"></i></a>
                     <a href="" class="btn btn-warning btn-sm"><i class="fa fa-trash text-white"></i></a>
@@ -53,18 +55,19 @@
                 </tr>
               <?php endforeach; ?>
             <?php else:?>
-              <tr><td colspan="7" class="text-center">No Property Available...</td></tr>
+              <tr><td colspan="8" class="text-center">No Property Available...</td></tr>
             <?php endif?>
           </tbody>
           <tfoot>
             <tr>
+              <th>#</th>
               <th>Title</th>
               <th>Property Type</th>
               <th>Residence Type</th>
               <th>Sale/Rent</th>
               <th>Location</th>
               <th>Price</th>
-              <th>Action</th>
+              <th class="text-center">Action</th>
             </tr>
           </tfoot>
         </table>
