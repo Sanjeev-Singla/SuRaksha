@@ -80,7 +80,7 @@
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-building"></i><span class="app-menu__label">Property</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
             <li><a class="treeview-item" href="<?= base_url('admin/properties') ?>"><i class="icon fa fa-building"></i>Residence</a></li>
-            <li><a class="treeview-item" href="<?= base_url('admin/') ?>"><i class="icon fa fa-plus"></i>Add Here</a></li>
+            <li><a class="treeview-item" href="<?= base_url('admin/aminities') ?>"><i class="icon fa fa-building"></i>Aminities</a></li>
           </ul>
         </li>
        

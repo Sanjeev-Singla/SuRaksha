@@ -50,5 +50,10 @@ class Property extends MY_Controller {
             $this->index('properties');
         }
     }
+
+    public function aminity(){
+         $data=$this->global_model->get_all('aminities');
+        $this->index('aminity',$data);
+    }
     
 }
