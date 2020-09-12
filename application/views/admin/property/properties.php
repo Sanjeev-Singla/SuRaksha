@@ -25,10 +25,12 @@
         <table class="table table-hover">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>E-Mail</th>
-              <th>Subject</th>
-              <th>Message</th>
+              <th>Title</th>
+              <th>Property Type</th>
+              <th>Residence Type</th>
+              <th>Sale/Rent</th>
+              <th>Location</th>
+              <th>Price</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -36,27 +38,32 @@
             <?php if(!empty($data['properties'])):?>
               <?php foreach ($data['properties'] as $value): ?>
                 <tr>
-                  <td><?=$value['name']?></td>
-                  <td><?=$value['email']?></td>
-                  <td><?= word_limiter($value['subject'],5); ?></td>
-                  <td><?= word_limiter($value['message'],10); ?></td>
+                  <td><?=word_limiter($value['property_title'],5)?></td>
+                  <td><?=$value['property_type']?></td>
+                  <td><?=$value['residence_type']?></td>
+                  <td><?=$value['sale_rent']?></td>
+                  <td><?=$value['location']?></td>
+                  <td><?=$value['price']?></td>
                   <td>
-                    <a href="#" id="view_contact_us_details" data-toggle="modal" data-target="#exampleModal" contact-us-id="<?=$value['id']?>" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="" data-original-title="View Details">
-                      <i class="fa fa-eye text-white"></i>
-                    </a>
+                    <a href="" class="btn btn-secondary btn-sm"><i class="fa fa-eye text-white"></i></a>
+                    <a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit text-white"></i></a>
+                    <a href="" class="btn btn-warning btn-sm"><i class="fa fa-trash text-white"></i></a>
+                    <a href="" class="btn btn-danger btn-sm"><i class="fa fa-ban text-white"></i></a>
                   </td>
                 </tr>
               <?php endforeach; ?>
             <?php else:?>
-              <tr><td colspan="5" class="text-center">No Property Available...</td></tr>
+              <tr><td colspan="7" class="text-center">No Property Available...</td></tr>
             <?php endif?>
           </tbody>
           <tfoot>
             <tr>
-              <th>Name</th>
-              <th>E-Mail</th>
-              <th>Subject</th>
-              <th>Message</th>
+              <th>Title</th>
+              <th>Property Type</th>
+              <th>Residence Type</th>
+              <th>Sale/Rent</th>
+              <th>Location</th>
+              <th>Price</th>
               <th>Action</th>
             </tr>
           </tfoot>
@@ -70,7 +77,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Add Property</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -81,7 +88,7 @@
               <label for="exampleSelect1">Property For</label>
               <select class="form-control" name="property_type" id="exampleSelect1">
                 <option value="">Please Select Your Property Type</option>
-                <option value="Residencial">Residencial</option>
+                <option value="Residential">Residential</option>
                 <option value="Official">Official</option>
                 <option value="Commercial">Commercial</option>
               </select>
@@ -106,7 +113,7 @@
 
             <div class="form-group" id="residential_type">
               <label for="exampleSelect1">Residential Type</label>
-              <select class="form-control" name="residential_type" id="exampleSelect1">
+              <select class="form-control" name="residence_type" id="exampleSelect1">
                 <option value="">Please Select Your Residential Type</option>
                 <option value="Plot">Plot</option>
                 <option value="Flat">Flat</option>
@@ -126,21 +133,26 @@
 
             <div class="form-group" id="flat_bhks">
               <label for="exampleInputEmail1">BHK</label>
-              <input class="form-control" name="flat_bhks" id="exampleInputEmail1" type="text" aria-describedby="emailHelp" placeholder="Enter BHKs">
+              <input class="form-control" name="bhk" id="exampleInputEmail1" type="text" aria-describedby="emailHelp" placeholder="Enter BHKs">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Property Title</label>
+              <input class="form-control" id="property_title" name="property_title" type="text" aria-describedby="emailHelp" placeholder="Property Title">
             </div>
 
             <div class="form-group">
               <label for="exampleInputEmail1">Property Size</label>
-              <input class="form-control" id="property_size" name="property_size" type="text" aria-describedby="emailHelp" placeholder="Property Size">
+              <input class="form-control" id="property_size" name="size" type="text" aria-describedby="emailHelp" placeholder="Property Size">
             </div>
 
             <div class="form-group">
               <div id="flat_aminities">
                 <label for="exampleInputEmail1">Select Aminities</label>
-                <select class="form-control" name="aminites[]" id="demoSelect" multiple="">
+                <select class="form-control" name="aminities[]" id="demoSelect" multiple="">
                   <optgroup label="Select Aminities">
                     <?php foreach($data['aminities'] as $aminity): ?>
-                      <option class="<?= $aminity['id']?>"><?= $aminity['aminities'] ?></option>
+                      <option value="<?= $aminity['id']?>"><?= $aminity['aminities'] ?></option>
                     <?php endforeach; ?>
                   </optgroup>
                 </select>
@@ -148,8 +160,29 @@
             </div>
 
             <div class="form-group">
+              <label class="control-label">Price</label>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend"><span class="input-group-text">₹</span></div>
+                  <input class="form-control" name="price" id="exampleInputAmount" type="text" placeholder="Amount">
+                  <div class="input-group-append"><span class="input-group-text">.00</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
               <label for="exampleInputEmail1">Location</label>
               <input class="form-control" id="property_location" name="location" type="text" aria-describedby="emailHelp" placeholder="Property Location">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">City</label>
+              <input class="form-control" id="property_city" name="city" type="text" aria-describedby="emailHelp" placeholder="Enter City">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Landark</label>
+              <input class="form-control" id="property_landark" name="landmark" type="text" aria-describedby="emailHelp" placeholder="Enter Landark">
             </div>
 
             <div class="form-group">

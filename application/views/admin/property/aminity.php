@@ -32,8 +32,8 @@
                   <td><?=$value['id']?></td>
                   <td><?=$value['aminities']?></td>
                   <td>
-                    <a href="#" id="view_contact_us_details" data-toggle="modal" data-target="#exampleModal" contact-us-id="<?=$value['id']?>" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="" data-original-title="View Details">
-                      <i class="fa fa-eye text-white"></i>
+                    <a href="<?= base_url('admin/delete-aminity/').$value['id'] ?>" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="View Details">
+                      <i class="fa fa-trash text-white"></i>
                     </a>
                   </td>
                 </tr>

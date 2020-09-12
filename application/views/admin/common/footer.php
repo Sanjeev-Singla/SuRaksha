@@ -7,6 +7,10 @@
     <script src="<?=base_url()?>assets/admin/js/plugins/select2.min.js"></script>
     <script src="<?= base_url() ?>assets/admin/js/jquery.toast.min.js"></script>
     <script src="<?= base_url() ?>assets/admin/common/js/custom.js"></script>
+    <script>
+      $('.bs-component [data-toggle="popover"]').popover();
+      $('.bs-component [data-toggle="tooltip"]').tooltip();
+    </script>
   </body>
    <?php
     if ($message = $this->session->flashdata('alert')) {

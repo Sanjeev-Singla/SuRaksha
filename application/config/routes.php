@@ -39,6 +39,9 @@ $route['admin/contact'] = "admin/home/contact";
 $route['admin/contact/(:num)'] = "admin/home/contact_details/$1";
 /*Peoperties*/
 $route['admin/properties'] = "admin/property/properties";
+/*Aminities*/
 $route['admin/aminities'] = "admin/property/aminity";
+$route['admin/delete-aminity/(:num)'] = "admin/property/delete_aminity/$1";
+
 
 $route['admin/logout'] = "admin/home/logout";

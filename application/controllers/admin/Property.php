@@ -19,35 +19,44 @@ class Property extends MY_Controller {
 
     public function properties(){
         if ($data = $this->input->post()) {
-            
-            $config = [ 
-                'upload_path' => './assets/admin/uploads/images/properties', 
-                'allowed_types' => 'jpg|JPG|png|PNG|jpeg|JPEG', 
-                'max_size' => '204800'
-            ];
-
-            for ($i=0; $i < count($_FILES['images']['name']); $i++) { 
-                $this->load->library('upload', $config);
-                if(!empty($_FILES['images']['name'][$i])) {
-
-                    $_FILES['image']['name']= $_FILES['images']['name'][$i];
-                    $_FILES['image']['type']= $_FILES['images']['type'][$i];
-                    $_FILES['image']['tmp_name']= $_FILES['images']['tmp_name'][$i];
-                    $_FILES['image']['error']= $_FILES['images']['error'][$i];
-                    $_FILES['image']['size']= $_FILES['images']['size'][$i]; 
-
-                    $this->upload->do_upload('image');
-                    $file_data = $this->upload->data();
-                    $file_name = $file_data['raw_name'] . $file_data['file_ext'];
-                    $data['images'][] = $file_name;
-                } 
-            }
-
             $data['aminities'] = implode(",", $data['aminities']);
+            $properties_id = $this->global_model->add("properties",$data);
 
-            
+            if ($properties_id) {
+
+                $config = [ 
+                    'upload_path' => './assets/admin/uploads/images/properties', 
+                    'allowed_types' => 'jpg|JPG|png|PNG|jpeg|JPEG', 
+                    'max_size' => '204800'
+                ];
+
+                for ($i=0; $i < count($_FILES['images']['name']); $i++) { 
+                    $this->load->library('upload', $config);
+                    if(!empty($_FILES['images']['name'][$i])) {
+
+                        $_FILES['image']['name']= $_FILES['images']['name'][$i];
+                        $_FILES['image']['type']= $_FILES['images']['type'][$i];
+                        $_FILES['image']['tmp_name']= $_FILES['images']['tmp_name'][$i];
+                        $_FILES['image']['error']= $_FILES['images']['error'][$i];
+                        $_FILES['image']['size']= $_FILES['images']['size'][$i]; 
+
+                        $this->upload->do_upload('image');
+                        $file_data = $this->upload->data();
+                        $file_name = $file_data['raw_name'] . $file_data['file_ext'];
+                        $image['property_image'] = $file_name;
+                        $image['properties_id'] = $properties_id;
+                        $this->global_model->add("property_image",$image);
+                    } 
+                }
+                $this->_class("alert_class",'green');
+                $this->_msg("alert","Property Added Successfully");
+            }else{
+                $this->_class("alert_class",'red');
+                $this->_msg("alert","Unable to Add Property");
+            }
+            _redirect('admin/properties');
         }else{
-            $data['properties'] = [];
+            $data['properties'] = $this->global_model->get_all('properties');
             $data["aminities"]=$this->global_model->get_all('aminities');
             $this->index('properties',$data);
         }
@@ -70,4 +79,15 @@ class Property extends MY_Controller {
         }
     }
     
+    public function delete_aminity($id){
+        $result = $this->global_model->delete('aminities',['id'=>$id]);
+        if ($result) {
+            $this->_class('alert_class','green');
+            $this->_msg('alert',"Adminity Deleted Successfully");
+        }else{
+            $this->_class('alert_class','red');
+            $this->_msg('alert',"Unable to Delete Aminity!");
+        }
+        _redirect_pre();
+    }
 }
