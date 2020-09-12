@@ -130,17 +130,30 @@
               <input class="form-control" id="property_size" name="property_size" type="text" aria-describedby="emailHelp" placeholder="Property Size">
             </div>
 
-            <div id="flat_aminities">
-              <label for="exampleInputEmail1">Select Aminities</label>
-              <select class="form-control" name="aminites" id="demoSelect" multiple="">
-                <optgroup label="Select Aminities">
-                  <option>Ahmedabad</option>
-                  <option>Surat</option>
-                  <option>Vadodara</option>
-                  <option>Rajkot</option>
-                  <option>Kapadwanj</option>
-                </optgroup>
-              </select>
+            <div class="form-group">
+              <div id="flat_aminities">
+                <label for="exampleInputEmail1">Select Aminities</label>
+                <select class="form-control" name="aminites" id="demoSelect" multiple="">
+                  <optgroup label="Select Aminities">
+                    <option>Ahmedabad</option>
+                    <option>Surat</option>
+                    <option>Vadodara</option>
+                    <option>Rajkot</option>
+                    <option>Kapadwanj</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Location</label>
+              <input class="form-control" id="property_location" name="location" type="text" aria-describedby="emailHelp" placeholder="Property Location">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputFile">Upload Image</label>
+              <input class="form-control-file" id="exampleInputFile" type="file" name="images" aria-describedby="fileHelp" multiple="">
+              <small class="form-text text-muted" id="fileHelp">Please Upload Only jpg,jpeg,png Extensions</small>
             </div>
 
             <div class="form-group">
