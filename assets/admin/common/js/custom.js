@@ -15,4 +15,37 @@ $(document).ready(function(){
 
 	$('#demoSelect').select2();
 
+	$('#residential_type').hide();
+	$('#flat_type').hide();
+	$('#flat_bhks').hide();
+	$('#flat_aminities').hide();
+	$("select[name='property_type']").change(function(){
+		var property_type = $(this).val();
+		if (property_type == 'Residencial') {
+			$('#residential_type').show();
+		}else{
+			$('#residential_type').hide();
+		}
+	});
+
+	$("select[name='residential_type']").change(function(){
+		var residential_type = $(this).val();
+		if (residential_type == 'Flat') {
+			$('#flat_type').show();
+			$('#flat_bhks').show();
+		}else{
+			$('#flat_type').hide();
+			$('#flat_bhks').hide();
+		}
+	});
+
+	$("select[name='flat_type']").change(function(){
+		var flat_type = $(this).val();
+		if (flat_type !== 'Raw') {
+			$('#flat_aminities').show();
+		}else{
+			$('#flat_aminities').hide();
+		}
+	});
+
 });

@@ -72,7 +72,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <fomr action="" method="POST">
+          <form action="" method="POST">
             <div class="form-group" id="property_type">
               <label for="exampleSelect1">Property For</label>
               <select class="form-control" name="property_type" id="exampleSelect1">
@@ -83,9 +83,26 @@
               </select>
             </div>
 
+            <div class="row">
+              <div class="col-md-2">
+                <div class="animated-radio-button">
+                  <label>
+                    <input type="radio" value="Sale" name="sale_rent"><span class="label-text">Sale</span>
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-10">
+                <div class="animated-radio-button">
+                  <label>
+                    <input type="radio" value="Rent" name="sale_rent"><span class="label-text">Rent</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
             <div class="form-group" id="residential_type">
               <label for="exampleSelect1">Residential Type</label>
-              <select class="form-control" id="exampleSelect1">
+              <select class="form-control" name="residential_type" id="exampleSelect1">
                 <option value="">Please Select Your Residential Type</option>
                 <option value="Plot">Plot</option>
                 <option value="Flat">Flat</option>
@@ -95,7 +112,7 @@
 
             <div class="form-group" id="flat_type">
               <label for="exampleSelect1">Flat Type</label>
-              <select class="form-control" id="exampleSelect1">
+              <select class="form-control" name="flat_type" id="exampleSelect1">
                 <option value="">Please Select Your Flat Type</option>
                 <option value="Fully Furnished">Fully Furnished</option>
                 <option value="Semi Furnished">Semi Furnished</option>
@@ -103,36 +120,39 @@
               </select>
             </div>
 
-            <div class="form-group">
+            <div class="form-group" id="flat_bhks">
               <label for="exampleInputEmail1">BHK</label>
-              <input class="form-control" id="flat_bhks" id="exampleInputEmail1" type="text" aria-describedby="emailHelp" placeholder="Enter BHKs">
+              <input class="form-control" name="flat_bhks" id="exampleInputEmail1" type="text" aria-describedby="emailHelp" placeholder="Enter BHKs">
             </div>
 
             <div class="form-group">
               <label for="exampleInputEmail1">Property Size</label>
-              <input class="form-control" id="property_size" id="exampleInputEmail1" type="text" aria-describedby="emailHelp" placeholder="Property Size">
+              <input class="form-control" id="property_size" name="property_size" type="text" aria-describedby="emailHelp" placeholder="Property Size">
             </div>
 
-            <label for="exampleInputEmail1">Select Aminities</label>
-            <select class="form-control" name="aminites" id="demoSelect" multiple="">
-              <optgroup label="Select Aminities">
-                <option>Ahmedabad</option>
-                <option>Surat</option>
-                <option>Vadodara</option>
-                <option>Rajkot</option>
-                <option>Kapadwanj</option>
-              </optgroup>
-            </select>
+            <div id="flat_aminities">
+              <label for="exampleInputEmail1">Select Aminities</label>
+              <select class="form-control" name="aminites" id="demoSelect" multiple="">
+                <optgroup label="Select Aminities">
+                  <option>Ahmedabad</option>
+                  <option>Surat</option>
+                  <option>Vadodara</option>
+                  <option>Rajkot</option>
+                  <option>Kapadwanj</option>
+                </optgroup>
+              </select>
+            </div>
 
             <div class="form-group">
               <label for="exampleTextarea">Description</label>
               <textarea class="form-control" name="description" id="exampleTextarea" rows="3"></textarea>
             </div>
+
+            <button type="submit" class="btn btn-primary">Save changes</button>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
