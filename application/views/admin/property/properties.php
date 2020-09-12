@@ -33,19 +33,23 @@
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($data['properties'] as $value): ?>
-              <tr>
-                <td><?=$value['name']?></td>
-                <td><?=$value['email']?></td>
-                <td><?= word_limiter($value['subject'],5); ?></td>
-                <td><?= word_limiter($value['message'],10); ?></td>
-                <td>
-                  <a href="#" id="view_contact_us_details" data-toggle="modal" data-target="#exampleModal" contact-us-id="<?=$value['id']?>" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="" data-original-title="View Details">
-                    <i class="fa fa-eye text-white"></i>
-                  </a>
-                </td>
-              </tr>
-            <?php endforeach; ?>
+            <?php if(!empty($data['properties'])):?>
+              <?php foreach ($data['properties'] as $value): ?>
+                <tr>
+                  <td><?=$value['name']?></td>
+                  <td><?=$value['email']?></td>
+                  <td><?= word_limiter($value['subject'],5); ?></td>
+                  <td><?= word_limiter($value['message'],10); ?></td>
+                  <td>
+                    <a href="#" id="view_contact_us_details" data-toggle="modal" data-target="#exampleModal" contact-us-id="<?=$value['id']?>" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="" data-original-title="View Details">
+                      <i class="fa fa-eye text-white"></i>
+                    </a>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
+            <?php else:?>
+              <tr><td colspan="5" class="text-center">No Property Available...</td></tr>
+            <?php endif?>
           </tbody>
           <tfoot>
             <tr>

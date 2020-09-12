@@ -26,17 +26,21 @@
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($data as $value): ?>
-              <tr>
-                <td><?=$value['id']?></td>
-                <td><?=$value['aminities']?></td>
-                <td>
-                  <a href="#" id="view_contact_us_details" data-toggle="modal" data-target="#exampleModal" contact-us-id="<?=$value['id']?>" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="" data-original-title="View Details">
-                    <i class="fa fa-eye text-white"></i>
-                  </a>
-                </td>
-              </tr>
-            <?php endforeach; ?>
+            <?php if(!empty($data)):?>
+              <?php foreach ($data as $value): ?>
+                <tr>
+                  <td><?=$value['id']?></td>
+                  <td><?=$value['aminities']?></td>
+                  <td>
+                    <a href="#" id="view_contact_us_details" data-toggle="modal" data-target="#exampleModal" contact-us-id="<?=$value['id']?>" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="" data-original-title="View Details">
+                      <i class="fa fa-eye text-white"></i>
+                    </a>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
+            <?php else:?>
+              <tr><td colspan="3" class="text-center">No Aminity Available...</td></tr>
+            <?php endif?>
           </tbody>
           <tfoot>
             <tr>
