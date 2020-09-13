@@ -49,8 +49,12 @@
                   <td class="text-center">
                     <a href="" class="btn btn-secondary btn-sm"><i class="fa fa-eye text-white"></i></a>
                     <a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit text-white"></i></a>
-                    <a href="" class="btn btn-warning btn-sm"><i class="fa fa-trash text-white"></i></a>
-                    <a href="" class="btn btn-danger btn-sm"><i class="fa fa-ban text-white"></i></a>
+                    <a href="<?= base_url("admin/delete-property/").$value['id']; ?>" class="btn btn-warning btn-sm" onClick="return confirm('Are you Sure?')">
+                      <i class="fa fa-trash text-white"></i>
+                    </a>
+                    <a href="<?= base_url("admin/sold-property/").$value['id']; ?>" class="btn btn-danger btn-sm">
+                      <i class="fa fa-ban text-white"></i>
+                    </a>
                   </td>
                 </tr>
               <?php endforeach; ?>

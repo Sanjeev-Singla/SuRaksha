@@ -56,10 +56,34 @@ class Property extends MY_Controller {
             }
             _redirect('admin/properties');
         }else{
-            $data['properties'] = $this->global_model->get_all('properties');
+            $data['properties'] = $this->global_model->get_all('properties',["status"=>0]);
             $data["aminities"]=$this->global_model->get_all('aminities');
             $this->index('properties',$data);
         }
+    }
+
+    public function delete_property($id){
+        $this->global_model->delete("properties",['id'=>$id]);
+        $images = $this->global_model->get_all("property_image",['properties_id'=>$id]);
+        foreach ($images as $key => $image) {
+            unlink("./assets/admin/uploads/images/properties/".$image["property_image"]);
+        }
+        $this->global_model->delete("property_image",['properties_id'=>$id]);
+        $this->_class("alert_class",'green');
+        $this->_msg("alert","Property Deleted Successfully");
+        _redirect_pre();
+    }
+
+    public function sold_property($id){
+        $result = $this->global_model->update("properties",['id'=>$id],["status"=>1]);
+        if ($result) {
+            $this->_class("alert_class",'green');
+            $this->_msg("alert","Property Sold Successfully");
+        }else{
+            $this->_class("alert_class",'red');
+            $this->_msg("alert","Error! Please Try Sometime Later");
+        }
+        _redirect_pre();
     }
 
     public function aminity(){
