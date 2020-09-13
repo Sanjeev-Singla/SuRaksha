@@ -27,7 +27,7 @@
           </thead>
           <tbody>
             <?php if(!empty($data)):?>
-              <?php foreach ($data as $value): ?>
+              <?php foreach ($data['aminities'] as $value): ?>
                 <tr>
                   <td><?=$value['id']?></td>
                   <td><?=$value['aminities']?></td>
@@ -50,6 +50,7 @@
             </tr>
           </tfoot>
         </table>
+        <?= $data['links_pagination']?>
       </div>
     </div>
   </div>

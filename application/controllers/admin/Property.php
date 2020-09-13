@@ -2,6 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Property extends MY_Controller {
+
+    private $num_rows = 2;
+
 	public function __construct() {
         parent::__construct();
         $this->load->model('global_model');
@@ -17,7 +20,7 @@ class Property extends MY_Controller {
         $this->load->view('admin/common/footer');
     }
 
-    public function properties(){
+    public function properties($page = 0){
         if ($data = $this->input->post()) {
             $data['aminities'] = implode(",", $data['aminities']);
             $properties_id = $this->global_model->add("properties",$data);
@@ -56,7 +59,9 @@ class Property extends MY_Controller {
             }
             _redirect('admin/properties');
         }else{
-            $data['properties'] = $this->global_model->get_all('properties',["status"=>0]);
+            $row_count = $this->global_model->count_rows("properties",["status"=>0]);
+            $data['properties'] = $this->global_model->select_all('properties',["status"=>0],$this->num_rows,$page);
+            $data['links_pagination'] = $this->_pagination("admin/properties",$this->num_rows,$row_count,3);
             $data["aminities"]=$this->global_model->get_all('aminities');
             $this->index('properties',$data);
         }
@@ -86,7 +91,7 @@ class Property extends MY_Controller {
         _redirect_pre();
     }
 
-    public function aminity(){
+    public function aminity($page = 0){
         if ($data = $this->input->post()) {
             $result = $this->global_model->add('aminities',$data);
             if ($result) {
@@ -98,7 +103,9 @@ class Property extends MY_Controller {
             }
             _redirect_pre();
         }else{
-            $data=$this->global_model->get_all('aminities');
+            $row_count = $this->global_model->count_rows("aminities");
+            $data['aminities']=$this->global_model->select_all('aminities',[],$this->num_rows,$page);
+            $data['links_pagination'] = $this->_pagination("admin/aminities",$this->num_rows,$row_count,3);
             $this->index('aminity',$data);
         }
     }

@@ -75,21 +75,23 @@ class MY_Controller extends CI_Controller {
             'next_link' => 'Next ',
             'prev_link' => 'Previous',
             'uri_segment' => $url_seg,
-            'first_tag_open' => '<li>',
+            'first_tag_open' => '<li class="page-item page-link">',
             'first_tag_close' => '</li>',
-            'last_tag_open' => '<li>',
+            'last_tag_open' => '<li class="page-item page-link">',
             'last_tag_close' => '</li>',
-            'next_tag_open' => '<li>',
+            'next_tag_open' => '<li class="page-item page-link">',
             'next_tag_close' => '</li>',
-            'prev_tag_open' => '<li>',
+            'prev_tag_open' => '<li class="page-item page-link">',
             'prev_tag_close' => '</li>',
-            'num_tag_open' => '<li>',
+            'num_tag_open' => '<li class="page-item page-link">',
             'num_tag_close' => '</li>',
-            'cur_tag_open' => "<li class='active'><a>",
+            'cur_tag_open' => "<li class='active page-item'><a class='page-link'>",
             'cur_tag_close' => '</a></li>',
             'display_pages' => TRUE,
         ];
-        return $config;
+        $this->pagination->initialize($config);
+        return $this->pagination->create_links();
+    
     }
 
 }

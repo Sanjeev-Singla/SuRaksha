@@ -39,10 +39,12 @@ $route['admin/contact'] = "admin/home/contact";
 $route['admin/contact/(:num)'] = "admin/home/contact_details/$1";
 /*Peoperties*/
 $route['admin/properties'] = "admin/property/properties";
+$route['admin/properties/(:num)'] = "admin/property/properties/$1";
 $route['admin/delete-property/(:num)'] = "admin/property/delete_property/$1";
 $route['admin/sold-property/(:num)'] = "admin/property/sold_property/$1";
 /*Aminities*/
 $route['admin/aminities'] = "admin/property/aminity";
+$route['admin/aminities/(:num)'] = "admin/property/aminity/$1";
 $route['admin/delete-aminity/(:num)'] = "admin/property/delete_aminity/$1";
 
 

@@ -76,6 +76,7 @@
           </tfoot>
         </table>
       </div>
+      <?= ($data['links_pagination']); ?>
     </div>
   </div>
 
