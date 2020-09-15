@@ -19,6 +19,8 @@ class Home extends MY_Controller {
     }
     
     public function home(){
-        $this->index('home');
+        $data = $this->global_model->get_all('properties',['status'=>0]);
+
+        $this->index('home',"SuRaksha- Home",'','',$data);
     }
 }
