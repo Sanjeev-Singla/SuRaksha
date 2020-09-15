@@ -46,6 +46,8 @@ $route['admin/sold-property/(:num)'] = "admin/property/sold_property/$1";
 $route['admin/aminities'] = "admin/property/aminity";
 $route['admin/aminities/(:num)'] = "admin/property/aminity/$1";
 $route['admin/delete-aminity/(:num)'] = "admin/property/delete_aminity/$1";
-
+/*Client Review*/
+$route['admin/client-reviews'] = "admin/client/client_reviews";
+$route['admin/delete-client-review/(:num)'] = "admin/client/delete_client_review/$1";
 
 $route['admin/logout'] = "admin/home/logout";

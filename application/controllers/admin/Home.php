@@ -31,6 +31,8 @@ class Home extends MY_Controller {
         echo json_encode($data);
     }
 
+    
+
 
     public function logout(){
         $this->session->sess_destroy();

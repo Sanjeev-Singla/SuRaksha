@@ -17,6 +17,5 @@ class Properties extends MY_Controller {
         $this->load->view('public/templates/'.$load_view,$data);
         $this->load->view('public/common/footer');
     }
-    
-    
 }
+
