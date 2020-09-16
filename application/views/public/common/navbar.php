@@ -17,12 +17,24 @@
  					<li class="nav-item <?= ($url_value=='properties')?"active":""?> "><a href="<?= base_url('properties')?>" class="nav-link">Properties</a></li>
  					<li class="nav-item <?= ($url_value=='blog')?"active":""?>"><a href="<?= base_url('blog')?>" class="nav-link">Blog</a></li>
  					<li class="nav-item <?= ($url_value=='contact')?"active":""?>"><a href="<?= base_url('contact')?>" class="nav-link">Contact Us</a></li>
-					<?php if ($this->session->userdata('user_id')) { ?>
-						<li class="nav-item"><a href="<?= base_url('logout')?>" class="nav-link">Logout</a></li> 
-						<li class="nav-item"><a href="<?= base_url('update-password')?>" class="nav-link">Update Password</a></li> 
-					<?php } else { ?>
-						<li class="nav-item"><a href="<?= base_url('register')?>" class="nav-link">Register</a></li>
-					<?php } ?>
+
+
+ 					<li class="nav-item dropdown">
+                        <a href="index.html#" class="nav-link" data-toggle="dropdown"><span class="nav-link-inner-text">User Profile</span> <span class="fas fa-angle-down nav-link-arrow ml-2"></span></a>
+                        <ul class="dropdown-menu">
+                           <li class="dropdown-submenu">
+                              <li class="sub-menu">
+                                  <?php if ($this->session->userdata('user_id')) { ?>
+                                  <a href="<?= base_url('logout') ?>" class="dropdown-item">Logout</a> 
+                                  <a href="<?= base_url('update-password') ?>" class="dropdown-item">Update Password</a> 
+                                  <?php } else { ?>
+                                 <li><a href="<?= base_url('login') ?>" class="dropdown-item">Login</a> 
+                                 <a href="<?= base_url('register') ?>" class="dropdown-item">Register</a> 
+                                 <?php } ?>
+                                 </li>
+                              </li>
+                           </li> 
+					
 					
  			</div>
  		</div>
