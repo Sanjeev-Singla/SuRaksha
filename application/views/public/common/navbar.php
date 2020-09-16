@@ -19,6 +19,7 @@
  					<li class="nav-item <?= ($url_value=='contact')?"active":""?>"><a href="<?= base_url('contact')?>" class="nav-link">Contact Us</a></li>
 					<?php if ($this->session->userdata('user_id')) { ?>
 						<li class="nav-item"><a href="<?= base_url('logout')?>" class="nav-link">Logout</a></li> 
+						<li class="nav-item"><a href="<?= base_url('update-password')?>" class="nav-link">Update Password</a></li> 
 					<?php } else { ?>
 						<li class="nav-item"><a href="<?= base_url('register')?>" class="nav-link">Register</a></li>
 					<?php } ?>

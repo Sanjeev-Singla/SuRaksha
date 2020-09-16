@@ -99,5 +99,25 @@ $config = array(
                 'required' => 'Please enter your %s.',
             ),
         ),
+    ),
+
+    "user_change_password" => array(
+       array(
+            'field' => 'new_password',
+            'rules' => 'required|min_length[6]',
+            'label' => 'New password',
+            'errors' => array(
+                'required' => 'Please enter your %s.',
+            ),
+        ),
+        array(
+            'field' => 'c_password',
+            'rules' => 'required|matches[new_password]',
+            'label' => 'Confirm password',
+            'errors' => array(
+                'required' => 'Please enter your %s.',
+            ),
+        )
+       
     )
 );
