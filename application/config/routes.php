@@ -29,7 +29,9 @@ $route['login'] = "user/users/login";
 $route['update-password'] = "user/common/update_password";
 $route['logout'] = "user/common/logout";
 
-
+/*Forgot password*/
+$route['forgot-password'] = "user/users/forgot_password";
+$route['reset-password'] = "user/users/reset_password";
 
 /***************************** Admin ***************************/
 $route['admin'] = "admin/admin";
@@ -50,5 +52,6 @@ $route['admin/delete-aminity/(:num)'] = "admin/property/delete_aminity/$1";
 /*Client Review*/
 $route['admin/client-reviews'] = "admin/client/client_reviews";
 $route['admin/delete-client-review/(:num)'] = "admin/client/delete_client_review/$1";
+$route['admin/edit-client-review/(:num)'] = "admin/client/edit_client_review/$1";
 
 $route['admin/logout'] = "admin/home/logout";

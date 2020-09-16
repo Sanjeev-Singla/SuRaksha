@@ -48,4 +48,28 @@ $(document).ready(function(){
 		}
 	});
 
+	$("#edit_client_review").click(function(){
+		let edit_url = $(this).attr('review-url');
+		$.ajax({
+			url:edit_url,
+			success:function(data){
+				$('#client_review_form').attr("action",edit_url);
+				let review_data = JSON.parse(data); 
+				$("input[name='name']").val(review_data.name);
+				$("input[name='position']").val(review_data.position);
+				$("textarea[name='comments']").val(review_data.comments);
+				return true;
+			},
+			error:function(){
+				alert("Unable to Edit");
+			}
+		});
+	});
+
+	$("#add_client_review_button").click(function(){
+		$('#client_review_form').attr("action",'');
+		$("input[name='name']").val("");
+		$("input[name='position']").val("");
+		$("textarea[name='comments']").val("");
+	});
 });

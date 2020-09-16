@@ -4,8 +4,8 @@
   <div class="container">
     <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
       <div class="col-md-9 ftco-animate pb-0 text-center">
-       <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Login <i class="fa fa-chevron-right"></i></span></p>
-       <h1 class="mb-3 bread">Login</h1>
+       <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Forgot Password <i class="fa fa-chevron-right"></i></span></p>
+       <h1 class="mb-3 bread">Forgot Password</h1>
      </div>
    </div>
  </div>
@@ -15,7 +15,7 @@
   <div class="container">
     <div class="row block-9 justify-content-center mb-5">
       <div class="col-md-8 mb-md-5">
-       <h2 class="text-center">Login Here</h2>
+       <h2 class="text-center">Forgot Password</h2>
        <?php if ($this->session->flashdata('alert')): ?>
         <div class="col-lg-6">
           <div class="bs-component">
@@ -26,25 +26,20 @@
         </div>
       <?php endif;?>
 
-      <form action="<?= base_url('login') ?>" method="POST" class="bg-light p-5 contact-form">
+      <form action="" method="POST" class="bg-light p-5 contact-form">
 
 
         <div class="form-group">
-          <input type="text" class="form-control" name="email" value="<?= set_value('email')?>" placeholder="Your Email" required>
+          <input type="email" class="form-control" name="email" value="<?= set_value('email')?>" placeholder="Your Email" required>
           <?= form_error('email');?>
         </div>
         
         <div class="form-group">
-          <input type="password" class="form-control" name="password" placeholder="Password">
-          <?= form_error('password');?>
-        </div>
-
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary py-3 px-5">Login</button>
+          <button type="submit" class="btn btn-primary py-3 px-5">Submit</button>
         </div>
 
         <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
-          <span class="font-weight-normal">Don't Remember Password? <a href="<?= base_url('forgot-password') ?>" class="font-weight-bold">Click here</a></span>
+          <span class="font-weight-normal">I have an Account? <a href="<?= base_url('login') ?>" class="font-weight-bold">Click here</a></span>
         </div>
           
         </form>

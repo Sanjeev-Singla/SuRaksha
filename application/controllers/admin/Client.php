@@ -22,15 +22,32 @@ class Client extends MY_Controller {
             $result = $this->global_model->add('client_reviews',$data);
             if ($result) {
                 $this->_class('alert_class',"green");
-                $this->_class('alert',"Comments Submitted Successfully");
+                $this->_class('alert',"Reviews Submitted Successfully");
             }else{
                 $this->_class('alert_class',"red");
-                $this->_class('alert',"Unable to Submit Comments!");
+                $this->_class('alert',"Unable to Submit Reviews!");
             }
             _redirect_pre();
         }else{
             $data = $this->global_model->get_all('client_reviews');
             $this->index('reviews',$data);
+        }
+    }
+
+    public function edit_client_review($id){
+        if ($data = $this->input->post()) {
+            $result = $this->global_model->update('client_reviews',['id'=>$id],$data);
+            if ($result) {
+                $this->_class('alert_class',"green");
+                $this->_class('alert',"Reviews Submitted Successfully");
+            }else{
+                $this->_class('alert_class',"red");
+                $this->_class('alert',"Unable to Update Reviews!");
+            }
+            _redirect_pre();
+        }else{
+            $data = $this->global_model->select_single("client_reviews",["id"=>$id]);
+            echo json_encode($data);
         }
     }
 

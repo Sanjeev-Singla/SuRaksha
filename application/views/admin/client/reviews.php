@@ -18,7 +18,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <button type="button" class="btn btn-primary pull-right mb-4" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" id="add_client_review_button" class="btn btn-primary pull-right mb-4" data-toggle="modal" data-target="#exampleModal">
           <i class="fa fa-plus-circle"></i> Add Review
         </button>
 
@@ -36,7 +36,14 @@
               <td><?=$value['name']?></td>
               <td><?=$value['position']?></td>
               <td><?=word_limiter($value['comments'],5)?></td>
-              <td class="text-center"><a href="<?= base_url('admin/delete-client-review/').$value['id']?>" class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i></a></td>
+              <td class="text-center">
+                <a href="<?= base_url('admin/delete-client-review/').$value['id']?>" onClick="return confirm('Are You Sure??')" class="btn btn-danger btn-sm text-white">
+                  <i class="fa fa-trash"></i>
+                </a>
+                <a href="#" id="edit_client_review" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-sm text-white" review-url="<?= base_url('admin/edit-client-review/').$value['id']?>">
+                  <i class="fa fa-edit"></i>
+                </a>
+              </td>
             <?php endforeach;?>
           </tbody>
           <tfoot>
@@ -63,22 +70,22 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="" method="POST" enctype="multipart/form-data">
+          <form action="" id="client_review_form" method="POST" enctype="multipart/form-data">
             <div class="form-group" id="property_type">
 
             <div class="form-group">
               <label for="exampleInputEmail1">Name</label>
-              <input class="form-control" id="" name="name" type="text" aria-describedby="emailHelp" placeholder="Enter Client Name">
+              <input class="form-control" id="" name="name" type="text" aria-describedby="emailHelp" placeholder="Enter Client Name" required="">
             </div>
 
             <div class="form-group">
               <label for="exampleInputEmail1">Position</label>
-              <input class="form-control" id="property_landark" name="position" type="text" aria-describedby="emailHelp" placeholder="Enter Client Position">
+              <input class="form-control" id="property_landark" name="position" type="text" aria-describedby="emailHelp" placeholder="Enter Client Position" required="">
             </div>
 
             <div class="form-group">
               <label for="exampleTextarea">Comment</label>
-              <textarea class="form-control" name="comments" id="exampleTextarea" rows="3"></textarea>
+              <textarea class="form-control" name="comments" id="exampleTextarea" rows="3" required=""></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Save changes</button>

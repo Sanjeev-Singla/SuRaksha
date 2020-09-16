@@ -34,7 +34,7 @@ class Users extends MY_Controller {
                 if($add){
                     $this->_msg('alert', 'Your are Registered Successfully');
                     $this->_class('alert_class', 'success');
-                    _redirect('register');
+                    _redirect('login');
                 }else{
                     $this->_msg('alert', 'Please try later');
                     $this->_class('alert_class', 'danger');
@@ -72,6 +72,60 @@ class Users extends MY_Controller {
             }
         }else{
              $this->index('login');
+        }
+    }
+
+    public function forgot_password(){
+        if ($data = $this->input->post()) {
+            $this->load->helper('string');
+            $forgot_token = random_string('alnum', 30);
+            $link = base_url("reset-password?email=").$data['email'].'&token='.$forgot_token;
+            $result = $this->global_model->update('users',$data,['forgot_token'=>$forgot_token]);
+            if ($result) {
+                $this->_msg('alert', 'Email Sent to your Email Id to reset password');
+                $this->_class('alert_class', 'success');
+            }else{
+                $this->_msg('alert', 'Incorrect E-mail');
+                $this->_class('alert_class', 'danger');
+            }
+            _redirect_pre();
+        }else{
+            $this->index("forgot-password",'Su-Raksha - Forgot Password');
+        }
+    }
+
+    public function reset_password(){
+        if ($data = $this->input->post()) {
+            $this->form_validation->set_error_delimiters("<p class='text-danger'>","</p>");
+            if ($this->form_validation->run('reset_password') == FALSE) {
+                $this->index('reset-password','Su-Raksha - Reset Password');
+            }else{
+                $data['password'] = sha1("encrypt".$data['password']);
+                $email = $this->input->get('email');
+                unset($data['confirm_password']);
+                $update=$this->global_model->update('users',['email'=>$email] ,['forgot_token'=>"",'password'=>$data['password']]);
+                if($update){
+                    $this->_msg('alert', 'Password Reset Successfully');
+                    $this->_class('alert_class', 'success');
+                    _redirect('login');
+                }else{
+                    $this->_msg('alert', 'Please try later');
+                    $this->_class('alert_class', 'danger');
+                    _redirect_pre();
+                }
+            }
+        }else{
+            $data = $this->input->get();
+            $user_data = $this->global_model->select_single('users',['forgot_token'=>$data['token'],'email'=>$data['email']]);
+            if ($user_data) {
+                $this->_msg('alert', 'Reset Your Password');
+                $this->_class('alert_class', 'success');
+                $this->index('reset-password','Su-Raksha - Reset Password');
+            }else{
+                $this->_msg('alert', 'Invalid token or Expired');
+                $this->_class('alert_class', 'danger');
+                _redirect('login');
+            }
         }
     }
 }

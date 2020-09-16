@@ -119,5 +119,16 @@ $config = array(
             ),
         )
        
+    ),
+    'reset_password'=> array(
+        array(
+            'field' => 'password',
+            'rules' => 'trim|required|min_length[6]'
+        ),
+        array(
+            'field' => 'confirm_password',
+            'label' => 'confirm password',
+            'rules' => 'trim|required|min_length[6]|matches[password]'
+        )
     )
 );
