@@ -63,4 +63,22 @@ class Admin_address extends MY_Controller {
         }
         _redirect_pre();
     }
+
+     public function social_link(){
+        if ($data = $this->input->post()) {
+            $result = $this->global_model->update('admin_social',[],$data);
+            if ($result) {
+                $this->_class('alert_class',"green");
+                $this->_class('alert',"Link Saved Successfully");
+            }else{
+                $this->_class('alert_class',"red");
+                $this->_class('alert',"Unable to Save Link!");
+            }
+            _redirect_pre();
+        }else{
+            $data = $this->global_model->get_all('admin_social');
+            $data= $data[0];
+            $this->index('social_link',$data);
+        }
+    }
 }

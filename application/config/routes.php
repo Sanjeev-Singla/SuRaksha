@@ -57,5 +57,9 @@ $route['admin/edit-client-review/(:num)'] = "admin/client/edit_client_review/$1"
 $route['admin/admin-address'] = "admin/admin_address/add_address";
 $route['admin/edit-admin-address/(:num)'] = "admin/admin_address/edit_admin_address/$1";
 $route['admin/delete-admin-address/(:num)'] = "admin/admin_address/delete_admin_address/$1";
+/*Social Links*/
+$route['admin/social-link'] = "admin/admin_address/social_link";
+$route['admin/edit-admin-address/(:num)'] = "admin/admin_address/edit_admin_address/$1";
+$route['admin/delete-admin-address/(:num)'] = "admin/admin_address/delete_admin_address/$1";
 
 $route['admin/logout'] = "admin/home/logout";
