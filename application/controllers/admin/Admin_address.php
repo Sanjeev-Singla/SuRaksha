@@ -23,10 +23,10 @@ class Admin_address extends MY_Controller {
             $result = $this->global_model->add('admin_address',$data);
             if ($result) {
                 $this->_class('alert_class',"green");
-                $this->_class('alert',"Address Submitted Successfully");
+                $this->_class('alert',"Address Saved Successfully");
             }else{
                 $this->_class('alert_class',"red");
-                $this->_class('alert',"Unable to Submit Address!");
+                $this->_class('alert',"Unable to Save Address!");
             }
             _redirect_pre();
         }else{
@@ -40,7 +40,7 @@ class Admin_address extends MY_Controller {
             $result = $this->global_model->update('admin_address',['id'=>$id],$data);
             if ($result) {
                 $this->_class('alert_class',"green");
-                $this->_class('alert',"Address Submitted Successfully");
+                $this->_class('alert',"Address Updated Successfully");
             }else{
                 $this->_class('alert_class',"red");
                 $this->_class('alert',"Unable to Update Address!");
@@ -63,8 +63,4 @@ class Admin_address extends MY_Controller {
         }
         _redirect_pre();
     }
-    
-
-
-   
 }

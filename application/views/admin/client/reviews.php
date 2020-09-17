@@ -33,17 +33,19 @@
           </thead>
           <tbody>
             <?php foreach($data as $value):?>
-              <td><?=$value['name']?></td>
-              <td><?=$value['position']?></td>
-              <td><?=word_limiter($value['comments'],5)?></td>
-              <td class="text-center">
-                <a href="<?= base_url('admin/delete-client-review/').$value['id']?>" onClick="return confirm('Are You Sure??')" class="btn btn-danger btn-sm text-white">
-                  <i class="fa fa-trash"></i>
-                </a>
-                <a href="#" id="edit_client_review" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-sm text-white" review-url="<?= base_url('admin/edit-client-review/').$value['id']?>">
-                  <i class="fa fa-edit"></i>
-                </a>
-              </td>
+              <tr>
+                <td><?=$value['name']?></td>
+                <td><?=$value['position']?></td>
+                <td><?=word_limiter($value['comments'],5)?></td>
+                <td class="text-center">
+                  <a href="<?= base_url('admin/delete-client-review/').$value['id']?>" onClick="return confirm('Are You Sure??')" class="btn btn-danger btn-sm text-white">
+                    <i class="fa fa-trash"></i>
+                  </a>
+                  <a href="#" id="edit_client_review" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-sm text-white" review-url="<?= base_url('admin/edit-client-review/').$value['id']?>">
+                    <i class="fa fa-edit"></i>
+                  </a>
+                </td>
+              </tr>
             <?php endforeach;?>
           </tbody>
           <tfoot>

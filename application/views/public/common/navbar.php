@@ -20,20 +20,23 @@
 
 
  					<li class="nav-item dropdown">
-                        <a href="index.html#" class="nav-link" data-toggle="dropdown"><span class="nav-link-inner-text">User Profile</span> <span class="fas fa-angle-down nav-link-arrow ml-2"></span></a>
-                        <ul class="dropdown-menu">
-                           <li class="dropdown-submenu">
-                              <li class="sub-menu">
-                                  <?php if ($this->session->userdata('user_id')) { ?>
-                                  <a href="<?= base_url('logout') ?>" class="dropdown-item">Logout</a> 
-                                  <a href="<?= base_url('update-password') ?>" class="dropdown-item">Update Password</a> 
-                                  <?php } else { ?>
-                                 <li><a href="<?= base_url('login') ?>" class="dropdown-item">Login</a> 
-                                 <a href="<?= base_url('register') ?>" class="dropdown-item">Register</a> 
-                                 <?php } ?>
-                                 </li>
-                              </li>
-                           </li> 
+            <a href="index.html#" class="nav-link" data-toggle="dropdown"><span class="nav-link-inner-text">User</span> <span class="fa fa-angle-down nav-link-arrow ml-2"></span></a>
+            <ul class="dropdown-menu">
+               <li class="dropdown-submenu">
+                  <li class="sub-menu">
+                    <?php if ($this->session->userdata('user_id')): ?>
+                      <li>
+                        <a href="<?= base_url('update-password') ?>" class="dropdown-item">Update Password</a> 
+                        <a href="<?= base_url('logout') ?>" class="dropdown-item">Logout</a> 
+                      </li>
+                    <?php else: ?>
+                      <li>
+                        <a href="<?= base_url('login') ?>" class="dropdown-item">Login</a> 
+                        <a href="<?= base_url('register') ?>" class="dropdown-item">Register</a> 
+                      </li>
+                    <?php endif; ?>
+                  </li>
+               </li>
 					
 					
  			</div>

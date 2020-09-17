@@ -18,7 +18,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <button type="button" id="add_client_review_button" class="btn btn-primary pull-right mb-4" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" id="add_admin_address_button" class="btn btn-primary pull-right mb-4" data-toggle="modal" data-target="#exampleModal">
           <i class="fa fa-plus-circle"></i> Add Address
         </button>
 
@@ -33,17 +33,19 @@
           </thead>
           <tbody>
             <?php foreach($data as $value):?>
-              <td><?=$value['email']?></td>
-              <td><?=$value['mobile']?></td>
-              <td><?=word_limiter($value['address'],5)?></td>
-              <td class="text-center">
-                <a href="<?= base_url('admin/delete-admin-address/').$value['id']?>" onClick="return confirm('Are You Sure??')" class="btn btn-danger btn-sm text-white">
-                  <i class="fa fa-trash"></i>
-                </a>
-                <a href="#" id="edit_admin_address" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-sm text-white" review-url="<?= base_url('admin/edit-admin-address/').$value['id']?>">
-                  <i class="fa fa-edit"></i>
-                </a>
-              </td>
+              <tr>
+                <td><?=$value['email']?></td>
+                <td><?=$value['mobile']?></td>
+                <td><?=word_limiter($value['address'],5)?></td>
+                <td class="text-center">
+                  <a href="<?= base_url('admin/delete-admin-address/').$value['id']?>" onClick="return confirm('Are You Sure??')" class="btn btn-danger btn-sm text-white">
+                    <i class="fa fa-trash"></i>
+                  </a>
+                  <a href="#" id="edit_admin_address" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-sm text-white" address-url="<?= base_url('admin/edit-admin-address/').$value['id']?>">
+                    <i class="fa fa-edit"></i>
+                  </a>
+                </td>
+              </tr>
             <?php endforeach;?>
           </tbody>
           <tfoot>
@@ -70,17 +72,17 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="" id="client_review_form" method="POST" enctype="multipart/form-data">
+          <form action="" id="admin_address_form" method="POST">
             <div class="form-group" id="property_type">
 
             <div class="form-group">
               <label for="exampleInputEmail1">Email</label>
-              <input class="form-control" id="" name="email" type="text" aria-describedby="emailHelp" placeholder="Enter Email" required="">
+              <input class="form-control" name="email" type="text" aria-describedby="emailHelp" placeholder="Enter Email" required="">
             </div>
 
             <div class="form-group">
               <label for="exampleInputEmail1">Mobile</label>
-              <input class="form-control" id="property_landark" name="mobile" type="text" aria-describedby="emailHelp" placeholder="Enter Mobile" required="">
+              <input class="form-control" name="mobile" type="text" aria-describedby="emailHelp" placeholder="Enter Mobile" required="">
             </div>
 
             <div class="form-group">
