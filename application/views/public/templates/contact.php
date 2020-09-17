@@ -43,28 +43,32 @@
       </div>
     </div>
     <div class="row d-flex mb-5 contact-info justify-content-center">
-      <div class="col-md-8">
-        <div class="row mb-5">
-          <div class="col-md-4 text-center py-4">
-            <div class="icon">
-              <span class="fa fa-map"></span>
+      <?php $data = $this->global_model->get_all('admin_address'); ?>
+      <?php foreach($data as $value):?>
+        <div class="col-md-8">
+          <div class="row mb-5">
+            <div class="col-md-4 text-center py-4">
+              <div class="icon">
+                <span class="fa fa-map"></span>
+              </div>
+              <p><span>Address:</span> <?=$value['address'] ?></p>
             </div>
-            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
-          </div>
-          <div class="col-md-4 text-center border-height py-4">
-            <div class="icon">
-              <span class="fa fa-phone"></span>
+            <div class="col-md-4 text-center border-height py-4">
+              <div class="icon">
+                <span class="fa fa-phone"></span>
+              </div>
+              <p><span>Phone:</span> <a href="tel://1234567920"><?= $value['mobile']  ?></a></p>
             </div>
-            <p><span>Phone:</span> <a href="tel://1234567920">+91 7973640255</a></p>
-          </div>
-          <div class="col-md-4 text-center py-4">
-            <div class="icon">
-              <span class="fa fa-paper-plane"></span>
+            <div class="col-md-4 text-center py-4">
+              <div class="icon">
+                <span class="fa fa-paper-plane"></span>
+              </div>
+              <p><span>Email:</span> <a href="mailto:info@yoursite.com"><?= $value['email'] ?> </a></p>
             </div>
-            <p><span>Email:</span> <a href="mailto:info@yoursite.com">sumit013pathania@gmail.com</a></p>
           </div>
         </div>
-      </div>
+      <?php endforeach; ?>
+
     </div>
   </div>
 </section>	

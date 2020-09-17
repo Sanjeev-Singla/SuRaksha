@@ -89,6 +89,12 @@
             <li><a class="treeview-item" href="<?= base_url('admin/aminities') ?>"><i class="icon fa fa-building"></i>Aminities</a></li>
           </ul>
         </li>
+
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-building"></i><span class="app-menu__label">Admin Info</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="<?= base_url('admin/admin-address') ?>"><i class="icon fa fa-building"></i>Address</a></li>
+          </ul>
+        </li>
        
         
       </ul>

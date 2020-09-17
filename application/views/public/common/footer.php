@@ -49,9 +49,12 @@
             	<h2 class="ftco-heading-2">Have a Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon fa fa-map"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+91 7973640255</span></a></li>
-	                <li><a href="#"><span class="icon fa fa-envelope pr-4"></span><span class="text">sumit013pathania@gmail.com</span></a></li>
+                  <?php $data=$this->global_model->get_all('admin_address'); ?>
+                 <?php foreach($data as $value):?>
+	                <li><span class="icon fa fa-map"></span><span class="text"><?= $value['address']?></span></li>
+	                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text"><?= $value['mobile']?></span></a></li>
+	                <li><a href="#"><span class="icon fa fa-envelope pr-4"></span><span class="text"><?= $value['email']?></span></a></li>
+                <?php endforeach; ?>
 	              </ul>
 	            </div>
             </div>
