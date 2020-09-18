@@ -148,35 +148,37 @@
    		<div class="row ftco-animate">
    			<div class="col-md-12">
    				<div class="carousel-properties owl-carousel">
-   					<div class="item">
-   						<div class="property-wrap ftco-animate">
-   							<a href="#" class="img" style="background-image: url(assets/public/images/work-5.jpg);">
-   								<div class="rent-sale">
-   									<span class="rent">Rent</span>
-   								</div>
-   								<p class="price"><span class="orig-price">$300<small> / mo</small></span></p>
-   							</a>
-   							<div class="text">
-   								<ul class="property_list">
-   									<li><span class="flaticon-bed"></span>3</li>
-   									<li><span class="flaticon-bathtub"></span>2</li>
-   									<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-   								</ul>
-   								<h3><a href="#">The Blue Sky Home</a></h3>
-   								<span class="location">Oakland</span>
-   								<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
-   									<span class="fa fa-link"></span>
-   								</a>
-   								<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
-   									<div class="d-flex align-items-center">
-   										<div class="img" style="background-image: url(assets/public/images/person_1.jpg);"></div>
-   										<h3 class="ml-2">John Dorf</h3>
-   									</div>
-   									<span class="text-right">2 weeks ago</span>
-   								</div>
-   							</div>
-   						</div>
-   					</div>
+   					<?php foreach($data['properties'] as $key => $value):?>                 
+                     <div class="item">
+                        <div class="property-wrap ftco-animate">
+                           <a href="#" class="img" style="background-image: url(assets/public/images/work-5.jpg);">
+                              <div class="rent-sale">
+                                 <span class="rent"><?= $value['sale_rent']?></span>
+                              </div>
+                              <p class="price"><span class="orig-price">₹ <?= $value['price']?><small> / mo</small></span></p>
+                           </a>
+                           <div class="text">
+                              <ul class="property_list">
+                                 <li><span class="flaticon-bed"></span><?= $value['bhk']?></li>
+                                 <li><span class="flaticon-bathtub"></span>2</li>
+                                 <li><span class="flaticon-floor-plan"></span><?= $value['size']?></li>
+                              </ul>
+                              <h3><a href="#"><?= $value['property_title']?></a></h3>
+                              <span class="location"><?= $value['location']?></span>
+                              <a href="#" class="d-flex align-items-center justify-content-center btn-custom">
+                                 <span class="fa fa-link"></span>
+                              </a>
+                              <div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
+                                 <div class="d-flex align-items-center">
+                                    <div class="img" style="background-image: url(assets/public/images/person_1.jpg);"></div>
+                                    <h3 class="ml-2">John Dorf</h3>
+                                 </div>
+                                 <span class="text-right">2 weeks ago</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  <?php endforeach;?>
    				</div>
    			</div>
    		</div>
@@ -343,28 +345,30 @@
    					<div class="row ftco-animate">
    						<div class="col-md-12">
    							<div class="carousel-testimony owl-carousel">
-   								<div class="item">
-   									<div class="testimony-wrap py-4">
-   										<div class="text">
-   											<span class="fa fa-quote-left"></span>
-   											<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-   											<div class="d-flex align-items-center">
-   												<div class="user-img" style="background-image: url(assets/public/images/person_2.jpg)"></div>
-   												<div class="pl-3">
-   													<p class="name">Roger Scott</p>
-   													<span class="position">Marketing Manager</span>
-   												</div>
-   											</div>
-   										</div>
-   									</div>
-   								</div>
+                           <?php foreach($data['client_reviews'] as $client_review):?>
+      								<div class="item">
+      									<div class="testimony-wrap py-4">
+      										<div class="text">
+      											<span class="fa fa-quote-left"></span>
+      											<p class="mb-4"><?=$client_review['comments']?></p>
+      											<div class="d-flex align-items-center">
+      												<div class="user-img" style="background-image: url(assets/public/images/person_2.jpg)"></div>
+      												<div class="pl-3">
+      													<p class="name"><?=$client_review['name']?></p>
+      													<span class="position"><?=$client_review['position']?></span>
+      												</div>
+      											</div>
+      										</div>
+      									</div>
+      								</div>
+                           <?php endforeach;?>
    							</div>
    						</div>
    					</div>
    				</div>
    			</section>
 
-   			<section class="ftco-section ftco-agent">
+   			<section class="ftco-section ftco-agent" style="display: none;">
    				<div class="container">
    					<div class="row justify-content-center pb-5">
    						<div class="col-md-12 heading-section text-center ftco-animate">
@@ -422,7 +426,7 @@
    			</section>
 
 
-   			<section class="ftco-section ftco-no-pt">
+   			<section class="ftco-section ftco-no-pt" style="display: none;">
    				<div class="container">
    					<div class="row justify-content-center mb-5">
    						<div class="col-md-7 heading-section text-center ftco-animate">

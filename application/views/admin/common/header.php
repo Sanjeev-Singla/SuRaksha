@@ -72,34 +72,35 @@
       <ul class="app-menu">
            <ul class="app-menu">
         <li><a class="app-menu__item active" href="<?= base_url('admin/home') ?>"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-user"></i><span class="app-menu__label">Contacts</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-envelope"></i><span class="app-menu__label">Contacts</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href="<?= base_url('admin/contact') ?>"><i class="icon fa fa-eye"></i>Contact</a></li>
+            <li><a class="treeview-item" href="<?= base_url('admin/contact') ?>"><i class="icon fa fa-phone"></i>Contact</a></li>
           </ul>
         </li>
 
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-user"></i><span class="app-menu__label">Client</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href="<?= base_url('admin/client-reviews') ?>"><i class="icon fa fa-eye"></i>Review</a></li>
+            <li><a class="treeview-item" href="<?= base_url('admin/client-reviews') ?>"><i class="icon fa fa-star"></i>Review</a></li>
           </ul>
         </li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-building"></i><span class="app-menu__label">Property</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-building-o"></i><span class="app-menu__label">Property</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href="<?= base_url('admin/properties') ?>"><i class="icon fa fa-building"></i>Residence</a></li>
-            <li><a class="treeview-item" href="<?= base_url('admin/aminities') ?>"><i class="icon fa fa-building"></i>Aminities</a></li>
+            <li><a class="treeview-item" href="<?= base_url('admin/properties') ?>"><i class="icon fa fa-home"></i>Residence</a></li>
+            <li><a class="treeview-item" href="<?= base_url('admin/aminities') ?>"><i class="icon fa fa-bed"></i>Aminities</a></li>
           </ul>
         </li>
 
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-business-time"></i><span class="app-menu__label">Admin Address</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-address-book"></i><span class="app-menu__label">Admin Address</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
             <li><a class="treeview-item" href="<?= base_url('admin/admin-address') ?>"><i class="icon fa fa-building"></i>Address</a></li>
             <li><a class="treeview-item" href="<?= base_url('admin/social-link') ?>"><i class="icon fa fa-instagram"></i>Social</a></li>
           </ul>
         </li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-spin"></i><span class="app-menu__label">Company</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-industry"></i><span class="app-menu__label">Company</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href="<?= base_url('admin/terms-condition') ?>"><i class="icon fa fa-plus"></i>Terms & Condition</a></li>
-            <li><a class="treeview-item" href="<?= base_url('admin/privacy-policy') ?>"><i class="icon fa fa-plus"></i>Privacy & Policy</a></li>
+            <li><a class="treeview-item" href="<?= base_url('admin/terms-condition') ?>"><i class="icon fa fa-gavel"></i>Terms & Condition</a></li>
+            <li><a class="treeview-item" href="<?= base_url('admin/privacy-policy') ?>"><i class="icon fa fa-lock"></i> Privacy & Policy</a></li>
+            <li><a class="treeview-item" href="<?= base_url('admin/about') ?>"><i class="icon fa fa-user"></i>About Us</a></li>
           </ul>
         </li>
        

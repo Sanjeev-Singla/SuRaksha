@@ -19,8 +19,8 @@ class Home extends MY_Controller {
     }
     
     public function home(){
-        $data = $this->global_model->get_all('properties',['status'=>0]);
-
+        $data['properties'] = $this->global_model->get_all('properties',['status'=>0]);
+        $data['client_reviews'] = $this->global_model->get_all('client_reviews');
         $this->index('home',"SuRaksha- Home",'','',$data);
     }
 }

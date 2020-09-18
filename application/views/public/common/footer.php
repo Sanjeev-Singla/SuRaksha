@@ -37,10 +37,9 @@
              <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Company</h2>
               <ul class="list-unstyled">
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About Us</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Press</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Careers</a></li>
+                <li><a href="<?= base_url('about')?>"><span class="fa fa-chevron-right mr-2"></span>About Us</a></li>
+                <li><a href="<?= base_url('terms-conditions')?>"><span class="fa fa-chevron-right mr-2"></span>Terms & Conditions</a></li>
+                <li><a href="<?= base_url('privacy-policy')?>"><span class="fa fa-chevron-right mr-2"></span>Privacy Policy</a></li>
               </ul>
             </div>
           </div>

@@ -14,8 +14,10 @@ $route['services'] = "public/services";
 /* Properties */
 $route['properties'] = "public/properties";
 
-/* About */
-$route['about'] = "public/about";
+/* COmpany */
+$route['about'] = "public/about/about";
+$route['terms-conditions'] = "public/company/terms_conditions";
+$route['privacy-policy'] = "public/company/privacy_policy";
 
 /* Blog */
 $route['blog'] = "public/blog";
@@ -32,6 +34,7 @@ $route['logout'] = "user/common/logout";
 /*Forgot password*/
 $route['forgot-password'] = "user/users/forgot_password";
 $route['reset-password'] = "user/users/reset_password";
+
 
 /***************************** Admin ***************************/
 $route['admin'] = "admin/admin";
@@ -64,5 +67,6 @@ $route['admin/delete-admin-address/(:num)'] = "admin/admin_address/delete_admin_
 /*Terms & Condition*/
 $route['admin/privacy-policy'] = "admin/company/privacy_policy";
 $route['admin/terms-condition'] = "admin/company/terms_condition";
+$route['admin/about'] = "admin/company/about";
 
 $route['admin/logout'] = "admin/home/logout";
