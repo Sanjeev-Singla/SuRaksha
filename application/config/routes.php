@@ -61,5 +61,8 @@ $route['admin/delete-admin-address/(:num)'] = "admin/admin_address/delete_admin_
 $route['admin/social-link'] = "admin/admin_address/social_link";
 $route['admin/edit-admin-address/(:num)'] = "admin/admin_address/edit_admin_address/$1";
 $route['admin/delete-admin-address/(:num)'] = "admin/admin_address/delete_admin_address/$1";
+/*Terms & Condition*/
+$route['admin/privacy-policy'] = "admin/company/privacy_policy";
+$route['admin/terms-condition'] = "admin/company/terms_condition";
 
 $route['admin/logout'] = "admin/home/logout";
