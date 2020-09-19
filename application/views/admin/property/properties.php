@@ -6,13 +6,12 @@
 <main class="app-content">
   <div class="app-title">
     <div>
-      <h1><i class="fa fa-th-list"></i> Basic Tables</h1>
-      <p>Basic bootstrap tables</p>
+      <h1><i class="fa fa-user"></i>Properties</h1>
     </div>
     <ul class="app-breadcrumb breadcrumb">
       <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
       <li class="breadcrumb-item">Tables</li>
-      <li class="breadcrumb-item active"><a href="#">Simple Tables</a></li>
+      <li class="breadcrumb-item active"><a href="#">Residence</a></li>
     </ul>
   </div>
   <div class="row">
@@ -21,7 +20,8 @@
         <button type="button" class="btn btn-primary pull-right mb-4" data-toggle="modal" data-target="#exampleModal">
           <i class="fa fa-plus-circle"></i> Add Property
         </button>
-
+       <input type="text" class="searchBox" id="searchBox"> </input>
+        <input type="submit" value="Search" class="btnInput" id="btnInput"> </input>
         <table class="table table-hover">
           <thead>
             <tr>

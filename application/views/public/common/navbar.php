@@ -15,7 +15,6 @@
  					<li class="nav-item  <?= ($url_value=='about')?"active":""?>"><a href="<?= base_url('about')?>" class="nav-link">About</a></li>
  					<li class="nav-item <?= ($url_value=='services')?"active":""?>"><a href="<?= base_url('services')?>" class="nav-link">Services</a></li>
  					<li class="nav-item <?= ($url_value=='properties')?"active":""?> "><a href="<?= base_url('properties')?>" class="nav-link">Properties</a></li>
- 					<li class="nav-item <?= ($url_value=='blog')?"active":""?>"><a href="<?= base_url('blog')?>" class="nav-link">Blog</a></li>
  					<li class="nav-item <?= ($url_value=='contact')?"active":""?>"><a href="<?= base_url('contact')?>" class="nav-link">Contact Us</a></li>
 
 
