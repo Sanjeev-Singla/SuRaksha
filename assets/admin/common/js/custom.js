@@ -73,7 +73,7 @@ $(document).ready(function(){
 		$("textarea[name='comments']").val("");
 	});
 
-	$("#edit_admin_address").click(function(){
+	/*$("#edit_admin_address").click(function(){
 		let edit_url = $(this).attr('address-url');
 		$.ajax({
 			url:edit_url,
@@ -97,5 +97,5 @@ $(document).ready(function(){
 		$("input[name='email']").val("");
 		$("input[name='mobile']").val("");
 		$("textarea[name='address']").val("");
-	});
+	});*/
 });

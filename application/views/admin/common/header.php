@@ -92,7 +92,7 @@
 
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-address-book"></i><span class="app-menu__label">Admin Address</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href="<?= base_url('admin/admin-address') ?>"><i class="icon fa fa-building"></i>Address</a></li>
+            <li><a class="treeview-item" href="<?= base_url('admin/admin-address') ?>"><i class="icon fa fa-address-book"></i>Address</a></li>
             <li><a class="treeview-item" href="<?= base_url('admin/social-link') ?>"><i class="icon fa fa-instagram"></i>Social</a></li>
           </ul>
         </li>
