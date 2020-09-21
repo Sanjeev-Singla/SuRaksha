@@ -12,7 +12,8 @@ $route['home'] = "public/home/home";
 $route['services'] = "public/services";
 
 /* Properties */
-$route['properties'] = "public/properties";
+$route['properties'] = "public/properties/properties";
+$route['serach-property'] = "public/properties/serach_property";
 
 /* COmpany */
 $route['about'] = "public/about/about";
