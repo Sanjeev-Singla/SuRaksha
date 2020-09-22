@@ -67,9 +67,4 @@ class Common extends MY_Controller {
         $this->session->unset_userdata('user_id');
         _redirect('login');
     }
-
-
-
-
-
 }

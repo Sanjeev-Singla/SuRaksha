@@ -72,30 +72,5 @@ $(document).ready(function(){
 		$("input[name='position']").val("");
 		$("textarea[name='comments']").val("");
 	});
-
-	$("#edit_admin_address").click(function(){
-		let edit_url = $(this).attr('address-url');
-		$.ajax({
-			url:edit_url,
-			success:function(data){
-				$('#admin_address_form').attr("action",edit_url);
-				address_data = JSON.parse(data);
-				$("input[name='email']").val(address_data.email);
-				$("input[name='mobile']").val(address_data.mobile);
-				$("textarea[name='address']").val(address_data.address);
-				return true;
-			},
-			error:function(data){
-				alert("Unable to Get information");
-				return false;
-			}
-		});
-	});
-
-	$("#add_admin_address_button").click(function(){
-		$('#admin_address_form').attr("action","");
-		$("input[name='email']").val("");
-		$("input[name='mobile']").val("");
-		$("textarea[name='address']").val("");
-	});
+	
 });

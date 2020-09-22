@@ -12,7 +12,8 @@ $route['home'] = "public/home/home";
 $route['services'] = "public/services";
 
 /* Properties */
-$route['properties'] = "public/properties";
+$route['properties'] = "public/properties/properties";
+$route['serach-property'] = "public/properties/serach_property";
 
 /* COmpany */
 $route['about'] = "public/about/about";
@@ -57,9 +58,7 @@ $route['admin/client-reviews'] = "admin/client/client_reviews";
 $route['admin/delete-client-review/(:num)'] = "admin/client/delete_client_review/$1";
 $route['admin/edit-client-review/(:num)'] = "admin/client/edit_client_review/$1";
 /*Admin Address*/
-$route['admin/admin-address'] = "admin/admin_address/add_address";
-$route['admin/edit-admin-address/(:num)'] = "admin/admin_address/edit_admin_address/$1";
-$route['admin/delete-admin-address/(:num)'] = "admin/admin_address/delete_admin_address/$1";
+$route['admin/admin-address'] = "admin/admin_address/address";
 /*Social Links*/
 $route['admin/social-link'] = "admin/admin_address/social_link";
 $route['admin/edit-admin-address/(:num)'] = "admin/admin_address/edit_admin_address/$1";

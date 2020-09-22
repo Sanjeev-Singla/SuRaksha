@@ -63,6 +63,17 @@ Class Global_model extends CI_Model {
         return $q->result_array();
     }
 
+
+    public function serach_property($table, $price = array(), $or_where_property_type = array(), $or_where_location = array() ,$like = array()){
+        $q = $this->db
+                ->where($price)
+                ->or_where($or_where_property_type)
+                ->or_where($or_where_location)
+                ->like($like,'both')
+                ->get($table);
+        return $q->result_array();
+    }
+
     public function count_rows($table, $where = array(), $like = array()) {
         $q = $this->db
                 ->where($where)
