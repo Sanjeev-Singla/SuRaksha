@@ -6,33 +6,11 @@
           <h2 class="ftco-heading-2">Su-Raksha</h2>
           <p>Far far away, behind the word mountains, far from the countries.</p>
           <ul class="ftco-footer-social list-unstyled mt-5">
-            <?php $data=$this->global_model->get_all('admin_social');
-            foreach($data as $value):?>
-              <li class="ftco-animate"><a href="<?= $value['twitter'] ?>" target="_blank"><span class="fa fa-twitter"></span></a></li>
-              <li class="ftco-animate"><a href="<?= $value['facebook'] ?>"  target="_blank"><span class="fa fa-facebook"></span></a></li>
-              <li class="ftco-animate"><a href="<?= $value['instagram'] ?>"  target="_blank"><span class="fa fa-instagram"></span></a></li>
-            <?php endforeach; ?>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md">
-        <div class="ftco-footer-widget mb-4 ml-md-4">
-          <h2 class="ftco-heading-2">Community</h2>
-          <ul class="list-unstyled">
-            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Search Properties</a></li>
-            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>For Agents</a></li>
-            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Reviews</a></li>
-            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>FAQs</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md">
-        <div class="ftco-footer-widget mb-4 ml-md-4">
-          <h2 class="ftco-heading-2">About Us</h2>
-          <ul class="list-unstyled">
-            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Our Story</a></li>
-            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Meet the team</a></li>
-            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Careers</a></li>
+            <?php     $this->load->model('global_model');
+             $data=$this->global_model->select_single('admin_social',['id'=>1]); ?>
+              <li class="ftco-animate"><a href="<?= $data['twitter'] ?>" target="_blank"><span class="fa fa-twitter"></span></a></li>
+              <li class="ftco-animate"><a href="<?= $data['facebook'] ?>"  target="_blank"><span class="fa fa-facebook"></span></a></li>
+              <li class="ftco-animate"><a href="<?= $data['instagram'] ?>"  target="_blank"><span class="fa fa-instagram"></span></a></li>
           </ul>
         </div>
       </div>

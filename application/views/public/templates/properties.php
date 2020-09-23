@@ -91,7 +91,7 @@
  			<?php foreach($data as $key => $value):?>
  				<div class="col-md-4">
  					<div class="property-wrap ftco-animate">
- 						<a href="properties-single.html" class="img" style="background-image: url(assets/public/images/work-1.jpg);">
+ 						<a href="<?= base_url('properties-single/').$value['id']?>" class="img" style="background-image: url(assets/public/images/work-1.jpg);">
  							<div class="rent-sale">
  								<span class="<?= strtolower($value['sale_rent'])?>"><?=$value['sale_rent']?></span>
  							</div>

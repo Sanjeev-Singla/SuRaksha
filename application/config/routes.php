@@ -13,6 +13,7 @@ $route['services'] = "public/services";
 
 /* Properties */
 $route['properties'] = "public/properties/properties";
+$route['properties-single/(:num)'] = "public/properties/properties_single/$1";
 $route['serach-property'] = "public/properties/serach_property";
 
 /* COmpany */

@@ -36,5 +36,15 @@ class Properties extends MY_Controller {
             $this->properties();
         }
     }
+
+    public function properties_single($id){
+        if($data=$this->input->post()){
+
+        }else{
+            $data=$this->global_model->select_single('properties',['id'=>$id]);
+            $this->index('properties_single','Su-Raksha','','',$data);
+        }
+
+    }
 }
 
