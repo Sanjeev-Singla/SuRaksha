@@ -16,7 +16,7 @@ $route['properties'] = "public/properties/properties";
 $route['properties-single/(:num)'] = "public/properties/properties_single/$1";
 $route['serach-property'] = "public/properties/serach_property";
 
-/* COmpany */
+/* Company */
 $route['about'] = "public/about/about";
 $route['terms-conditions'] = "public/company/terms_conditions";
 $route['privacy-policy'] = "public/company/privacy_policy";
@@ -54,6 +54,10 @@ $route['admin/sold-property/(:num)'] = "admin/property/sold_property/$1";
 $route['admin/aminities'] = "admin/property/aminity";
 $route['admin/aminities/(:num)'] = "admin/property/aminity/$1";
 $route['admin/delete-aminity/(:num)'] = "admin/property/delete_aminity/$1";
+/*Cities*/
+$route['admin/cities'] = "admin/property/city";
+$route['admin/cities/(:num)'] = "admin/property/city/$1";
+$route['admin/delete-city/(:num)'] = "admin/property/delete_city/$1";
 /*Client Review*/
 $route['admin/client-reviews'] = "admin/client/client_reviews";
 $route['admin/delete-client-review/(:num)'] = "admin/client/delete_client_review/$1";

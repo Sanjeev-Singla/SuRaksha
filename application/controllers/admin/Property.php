@@ -63,6 +63,7 @@ class Property extends MY_Controller {
             $data['properties'] = $this->global_model->select_all('properties',["status"=>0],$this->num_rows,$page);
             $data['links_pagination'] = $this->_pagination("admin/properties",$this->num_rows,$row_count,3);
             $data["aminities"]=$this->global_model->get_all('aminities');
+            $data["cities"]=$this->global_model->get_all('cities');
             $this->index('properties',$data);
         }
     }
@@ -118,6 +119,37 @@ class Property extends MY_Controller {
         }else{
             $this->_class('alert_class','red');
             $this->_msg('alert',"Unable to Delete Aminity!");
+        }
+        _redirect_pre();
+    }
+
+    public function city($page = 0){
+        if ($data = $this->input->post()) {
+            $result = $this->global_model->add('cities',$data);
+            if ($result) {
+                $this->_class('alert_class','green');
+                $this->_msg('alert',"City Added Successfully");
+            }else{
+                $this->_class('alert_class','red');
+                $this->_msg('alert',"Unable to Add City!");
+            }
+            _redirect_pre();
+        }else{
+            $row_count = $this->global_model->count_rows("cities");
+            $data['cities']=$this->global_model->select_all('cities',[],$this->num_rows,$page);
+            $data['links_pagination'] = $this->_pagination("admin/cities",$this->num_rows,$row_count,3);
+            $this->index('cities',$data);
+        }
+    }
+
+    public function delete_city($id){
+        $result = $this->global_model->delete('cities',['id'=>$id]);
+        if ($result) {
+            $this->_class('alert_class','green');
+            $this->_msg('alert',"City Deleted Successfully");
+        }else{
+            $this->_class('alert_class','red');
+            $this->_msg('alert',"Unable to Delete City!");
         }
         _redirect_pre();
     }

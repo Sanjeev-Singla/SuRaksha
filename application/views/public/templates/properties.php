@@ -102,12 +102,10 @@
  								<li><span class="flaticon-bed"></span><?=$value['bhk']?></li>
  								<li><span class="flaticon-bathtub"></span>2</li>
  								<li><span class="flaticon-floor-plan"></span><?=$value['size']?></li>
+ 								<div class="pull-right btn" id="add_to_favourite" style="font-size: 25px;" data-toggle="tooltip" data-placement="top" title="Add to Favourite"><i class="fa fa-heart"></i></div>
  							</ul>
  							<h3><a href="#"><?=$value['property_title']?></a></h3>
  							<span class="location"><?=$value['location']?></span>
- 							<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
- 								<span class="fa fa-link"></span>
- 							</a>
  							<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
  								<div class="d-flex align-items-center">
  									<div class="img" style="background-image: url(assets/public/images/person_1.jpg);"></div>

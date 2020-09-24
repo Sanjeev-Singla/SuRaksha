@@ -183,9 +183,14 @@
               <input class="form-control" id="property_location" name="location" type="text" aria-describedby="emailHelp" placeholder="Property Location">
             </div>
 
-            <div class="form-group">
-              <label for="exampleInputEmail1">City</label>
-              <input class="form-control" id="property_city" name="city" type="text" aria-describedby="emailHelp" placeholder="Enter City">
+            <div class="form-group" id="city">
+              <label for="exampleSelect1">City</label>
+              <select class="form-control" name="city" id="exampleSelect1">
+                <option value="">Please Select City</option>
+                <?php foreach($data['cities'] as $city):?>
+                  <option value="<?=$city['city']?>"><?=$city['city']?></option>
+                <?php endforeach?>
+              </select>
             </div>
 
             <div class="form-group">

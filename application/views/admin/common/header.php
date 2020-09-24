@@ -87,6 +87,7 @@
           <ul class="treeview-menu">
             <li><a class="treeview-item" href="<?= base_url('admin/properties') ?>"><i class="icon fa fa-home"></i>Properties</a></li>
             <li><a class="treeview-item" href="<?= base_url('admin/aminities') ?>"><i class="icon fa fa-bed"></i>Aminities</a></li>
+            <li><a class="treeview-item" href="<?= base_url('admin/cities') ?>"><i class="icon fa fa-globe"></i>Cites</a></li>
           </ul>
         </li>
 
