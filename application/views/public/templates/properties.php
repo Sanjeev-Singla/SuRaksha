@@ -102,7 +102,7 @@
  								<li><span class="flaticon-bed"></span><?=$value['bhk']?></li>
  								<li><span class="flaticon-bathtub"></span>2</li>
  								<li><span class="flaticon-floor-plan"></span><?=$value['size']?></li>
- 								<div class="pull-right btn" id="add_to_favourite" style="font-size: 25px;" data-toggle="tooltip" data-placement="top" title="Add to Favourite"><i class="fa fa-heart"></i></div>
+ 								<div class="pull-right btn" property-id="<?=$value['id']?>" id="add_to_favourite" style="font-size: 25px;" data-toggle="tooltip" data-placement="top" title="Add to Favourite"><i class="fa fa-heart-o"></i></div>
  							</ul>
  							<h3><a href="#"><?=$value['property_title']?></a></h3>
  							<span class="location"><?=$value['location']?></span>

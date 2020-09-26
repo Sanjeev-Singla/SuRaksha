@@ -15,15 +15,26 @@ $(document).ready(function(){
 
 	$('#demoSelect').select2();
 
-	$('#residence_type').hide();
-	$('#flat_type').hide();
-	$('#flat_bhks').hide();
-	$('#flat_aminities').hide();
+	let residential_type = $("select[name='residence_type'] option:selected").val();
+	if (residential_type !== "Flat") {
+		$('#residential_type').hide();
+		$('#flat_type').hide();
+		$('#flat_bhks').hide();
+		$('#flat_aminities').hide();
+	}else{
+		$('select[name="residence_type"]').attr("required",true);
+		$('select[name="flat_type"]').attr("required",true);
+		$('input[name="bhk"]').attr("required",true);
+		$('select[name="aminities[]"]').attr("required",true);
+	}
+
 	$("select[name='property_type']").change(function(){
 		var property_type = $(this).val();
-		if (property_type == 'Residencial') {
-			$('#residence_type').show();
+		if (property_type == 'Residential') {
+			$('#residential_type').show();
+			$('select[name="residence_type"]').attr("required",true);
 		}else{
+			$('select[name="residence_type"]').removeAttr("required");
 			$('#residence_type').hide();
 		}
 	});
@@ -33,9 +44,15 @@ $(document).ready(function(){
 		if (residence_type == 'Flat') {
 			$('#flat_type').show();
 			$('#flat_bhks').show();
+			$('select[name="flat_type"]').attr("required",true);
+			$('input[name="bhk"]').attr("required",true);
 		}else{
 			$('#flat_type').hide();
 			$('#flat_bhks').hide();
+			$('#flat_aminities').hide();
+			$('select[name="flat_type"]').removeAttr("required");
+			$('input[name="bhk"]').removeAttr("required");
+			$('select[name="aminities[]"]').removeAttr("required");
 		}
 	});
 
@@ -43,8 +60,10 @@ $(document).ready(function(){
 		var flat_type = $(this).val();
 		if (flat_type !== 'Raw') {
 			$('#flat_aminities').show();
+			$('select[name="aminities[]"]').attr("required",true);
 		}else{
 			$('#flat_aminities').hide();
+			$('select[name="aminities[]"]').removeAttr("required");
 		}
 	});
 

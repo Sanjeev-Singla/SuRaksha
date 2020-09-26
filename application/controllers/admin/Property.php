@@ -153,4 +153,35 @@ class Property extends MY_Controller {
         }
         _redirect_pre();
     }
+
+    public function edit_property($id){
+        if ($data = $this->input->post()) {
+            if ($data['flat_type'] == 'Raw') {
+                $data['aminities'] = "";
+            }else{
+                $data['aminities'] = implode(',', $data['aminities']);
+            }
+            $result = $this->global_model->update('properties',['id'=>$id],$data);
+            if ($result) {
+                $this->_class("alert_class",'green');
+                $this->_msg("alert","Property Updated Successfully");
+            }else{
+                $this->_class("alert_class",'red');
+                $this->_msg("alert","Unable to Update Property");
+            }
+            _redirect('admin/properties');
+        }else{
+            $data['property'] = $this->global_model->select_single('properties',['id'=>$id,'status'=>0]);
+            if (!empty($data['property'])) {
+                $data['property']['aminities'] = explode(",", $data['property']['aminities']);
+                $data["aminities"] = $this->global_model->get_all('aminities');
+                $data["cities"] = $this->global_model->get_all('cities');
+                $this->index('edit-property',$data);
+            }else{
+                $this->_class("alert_class",'red');
+                $this->_msg("alert","Property is not Available");
+                _redirect('admin/properties');
+            }
+        }
+    }
 }

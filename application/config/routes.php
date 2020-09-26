@@ -15,6 +15,7 @@ $route['services'] = "public/services";
 $route['properties'] = "public/properties/properties";
 $route['properties-single/(:num)'] = "public/properties/properties_single/$1";
 $route['serach-property'] = "public/properties/serach_property";
+$route['add-remove-property/(:num)'] = "public/properties/add_remove_favourite/$1";
 
 /* Company */
 $route['about'] = "public/about/about";
@@ -42,6 +43,7 @@ $route['reset-password'] = "user/users/reset_password";
 $route['admin'] = "admin/admin";
 $route['admin/login'] = "admin/admin/login";
 $route['admin/home'] = "admin/home/home";
+
 /*Contact*/
 $route['admin/contact'] = "admin/home/contact";
 $route['admin/contact/(:num)'] = "admin/home/contact_details/$1";
@@ -50,6 +52,7 @@ $route['admin/properties'] = "admin/property/properties";
 $route['admin/properties/(:num)'] = "admin/property/properties/$1";
 $route['admin/delete-property/(:num)'] = "admin/property/delete_property/$1";
 $route['admin/sold-property/(:num)'] = "admin/property/sold_property/$1";
+$route['admin/edit-property/(:num)'] = "admin/property/edit_property/$1";
 /*Aminities*/
 $route['admin/aminities'] = "admin/property/aminity";
 $route['admin/aminities/(:num)'] = "admin/property/aminity/$1";
