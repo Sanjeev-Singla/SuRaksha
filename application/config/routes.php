@@ -53,6 +53,9 @@ $route['admin/properties/(:num)'] = "admin/property/properties/$1";
 $route['admin/delete-property/(:num)'] = "admin/property/delete_property/$1";
 $route['admin/sold-property/(:num)'] = "admin/property/sold_property/$1";
 $route['admin/edit-property/(:num)'] = "admin/property/edit_property/$1";
+$route['admin/sold-rented'] = "admin/property/sold_rented";
+$route['admin/sold-rented/(:num)'] = "admin/property/sold_rented/$1";
+$route['admin/unblock-property/(:num)'] = "admin/property/unblock_property/$1";
 /*Aminities*/
 $route['admin/aminities'] = "admin/property/aminity";
 $route['admin/aminities/(:num)'] = "admin/property/aminity/$1";

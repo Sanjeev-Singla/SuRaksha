@@ -18,7 +18,13 @@ class Home extends MY_Controller {
     }
     
     public function home(){
-        $this->index('home');  
+        $data['total_for_rent'] = $this->global_model->count_rows('properties',["sale_rent"=>'Rent']);
+        $data['total_for_sale'] = $this->global_model->count_rows('properties',["sale_rent"=>'Sale']);
+        $data['available_for_rent'] = $this->global_model->count_rows('properties',['status'=>0,"sale_rent"=>'Rent']);
+        $data['available_for_sale'] = $this->global_model->count_rows('properties',['status'=>0,"sale_rent"=>'Sale']);
+        $data['sold'] = $this->global_model->count_rows('properties',['status'=>1,"sale_rent"=>'Sale']);
+        $data['rented'] = $this->global_model->count_rows('properties',['status'=>1,"sale_rent"=>'Rent']);
+        $this->index('home',$data);  
     }
 
     public function contact(){

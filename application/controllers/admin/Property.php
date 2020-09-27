@@ -59,8 +59,13 @@ class Property extends MY_Controller {
             }
             _redirect('admin/properties');
         }else{
-            $row_count = $this->global_model->count_rows("properties",["status"=>0]);
-            $data['properties'] = $this->global_model->select_all('properties',["status"=>0],$this->num_rows,$page);
+            if ($search = $this->input->get('search')) {
+                $row_count = $this->global_model->serach_property_table_count("properties",['price'=>$search],['residence_type'=>$search],['sale_rent'=>$search],['property_type'=>$search],['location'=>$search],['property_title'=>$search],['status'=>0]);
+                $data['properties'] = $this->global_model->serach_property_table('properties',['price'=>$search],['residence_type'=>$search],['sale_rent'=>$search],['property_type'=>$search],['location'=>$search],['property_title'=>$search],['status'=>0],$this->num_rows,$page);
+            }else{
+                $row_count = $this->global_model->count_rows("properties",["status"=>0]);
+                $data['properties'] = $this->global_model->select_all('properties',["status"=>0],$this->num_rows,$page);
+            }
             $data['links_pagination'] = $this->_pagination("admin/properties",$this->num_rows,$row_count,3);
             $data["aminities"]=$this->global_model->get_all('aminities');
             $data["cities"]=$this->global_model->get_all('cities');
@@ -183,5 +188,26 @@ class Property extends MY_Controller {
                 _redirect('admin/properties');
             }
         }
+    }
+
+    public function sold_rented($page = 0){
+        $row_count = $this->global_model->count_rows("properties",["status"=>1]);
+        $data['properties'] = $this->global_model->select_all('properties',["status"=>1],$this->num_rows,$page);
+        $data['links_pagination'] = $this->_pagination("admin/properties",$this->num_rows,$row_count,3);
+        $data["aminities"]=$this->global_model->get_all('aminities');
+        $data["cities"]=$this->global_model->get_all('cities');
+        $this->index('sold_rented',$data);
+    }
+
+    public function unblock_property($id){
+        $result = $this->global_model->update("properties",['id'=>$id],["status"=>0]);
+        if ($result) {
+            $this->_class("alert_class",'green');
+            $this->_msg("alert","Property Unblocked Successfully");
+        }else{
+            $this->_class("alert_class",'red');
+            $this->_msg("alert","Error! Please Try Sometime Later");
+        }
+        _redirect_pre();
     }
 }

@@ -64,14 +64,42 @@ Class Global_model extends CI_Model {
     }
 
 
-    public function serach_property($table, $price = array(), $or_where_property_type = array(), $or_where_location = array() ,$like = array()){
+    public function serach_property($table, $price = array(), $property_type = array(), $location = array() ,$like = array()){
         $q = $this->db
                 ->where($price)
-                ->or_where($or_where_property_type)
-                ->or_where($or_where_location)
-                ->like($like,'both')
+                ->where('status',0)
+                ->or_where($property_type)
+                ->or_where($location)
+                ->or_like($like,'both')
                 ->get($table);
         return $q->result_array();
+    }
+
+    public function serach_property_table($table, $price = array(), $residence_type = array(),$sale_rent = array(),$property_type = array(), $location = array() ,$like = array(),$status=array(), $limit = False, $offset = False){
+        $q = $this->db
+                ->where($status)
+                ->where($price)
+                ->or_where($residence_type)
+                ->or_where($sale_rent)
+                ->or_where($property_type)
+                ->or_where($location)
+                ->or_like($like,'both')
+                ->limit($limit, $offset)
+                ->get($table);
+        return $q->result_array();
+    }
+
+    public function serach_property_table_count($table, $price = array(), $residence_type = array(), $sale_rent = array(), $property_type = array(), $location = array(), $like = array(), $status=array()){
+        $q = $this->db
+                ->where($status)
+                ->where($price)
+                ->or_where($residence_type)
+                ->or_where($sale_rent)
+                ->or_where($property_type)
+                ->or_where($location)
+                ->or_like($like,'both')
+                ->get($table);
+        return $q->num_rows();
     }
 
     public function count_rows($table, $where = array(), $like = array()) {
@@ -88,7 +116,6 @@ Class Global_model extends CI_Model {
                 ->from($table1)
                 ->join($table2, $join_str,'INNER')
                 ->get();
-//        print_r($this->db->last_query()); exit;
         return $q->result_array();
     }
     
@@ -99,7 +126,6 @@ Class Global_model extends CI_Model {
                 ->join($table2, $join_str1,'INNER')
                 ->join($table3, $join_str2,'INNER')
                 ->get();
-//        print_r($this->db->last_query()); exit;
         return $q->result_array();
     }
 

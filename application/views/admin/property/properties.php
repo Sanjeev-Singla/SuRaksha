@@ -20,8 +20,10 @@
         <button type="button" class="btn btn-primary pull-right mb-4" data-toggle="modal" data-target="#exampleModal">
           <i class="fa fa-plus-circle"></i> Add Property
         </button>
-       <input type="text" class="searchBox" id="searchBox"> </input>
-        <input type="submit" value="Search" class="btnInput" id="btnInput"> </input>
+        <form method="get" action="">
+          <input type="text" name="search" class="searchBox" id="searchBox"> </input>
+          <input type="submit" value="Search" class="btnInput" id="btnInput"> </input>
+        </form>
         <table class="table table-hover">
           <thead>
             <tr>
@@ -52,7 +54,7 @@
                     <a href="<?= base_url("admin/delete-property/").$value['id']; ?>" class="btn btn-warning btn-sm" onClick="return confirm('Are you Sure?')">
                       <i class="fa fa-trash text-white"></i>
                     </a>
-                    <a href="<?= base_url("admin/sold-property/").$value['id']; ?>" class="btn btn-danger btn-sm">
+                    <a href="<?= base_url("admin/sold-property/").$value['id']; ?>" onClick="return confirm('Are You Sure??')" class="btn btn-danger btn-sm">
                       <i class="fa fa-ban text-white"></i>
                     </a>
                   </td>

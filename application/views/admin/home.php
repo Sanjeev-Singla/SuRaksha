@@ -1,28 +1,59 @@
-<style>
-    .widget-small.primary.coloured-icon .icon {
-    background-color: #2e5c97!important;
-}
-.info a{
-    color:#2e5c97!important;
-}
-</style>
-<div class="app-title">
-    <div>
-      <h1><i class="fa fa-dashboard"></i> Dashboard</h1>
-      <!--<p>A free and open source Bootstrap 4 admin template</p>-->
+<main class="app-content">
+
+<!-- For Rent -->
+  <div class="row">
+    <div class="col-md-4">
+      <div class="widget-small primary"><i class="icon fa fa-calculator fa-3x"></i>
+        <div class="info">
+          <h4>For Rent</h4>
+          <p><b><?=$data['total_for_rent']?></b></p>
+        </div>
+      </div>
     </div>
-    <ul class="app-breadcrumb breadcrumb">
-      <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-    </ul>
+    <div class="col-md-4">
+      <div class="widget-small info"><i class="icon fa fa-check fa-3x"></i>
+        <div class="info">
+          <h4>Available </h4>
+          <p><b><?=$data['available_for_rent']?></b></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="widget-small danger"><i class="icon fa fa-ban fa-3x"></i>
+        <div class="info">
+          <h4>Rented</h4>
+          <p><b><?=$data['rented']?></b></p>
+        </div>
+      </div>
+    </div>
   </div>
- 
-<h1>hi</h1>
-<script type="text/javascript"> 
-function deleteConfirm(url)
- {
-    if(confirm('Do you want to Delete this record ?'))
-    {
-        window.location.href=url;
-    }
- }
-</script>
+
+<!-- For Sale -->
+  <div class="row">
+    <div class="col-md-4">
+      <div class="widget-small primary"><i class="icon fa fa-calculator fa-3x"></i>
+        <div class="info">
+          <h4>For Sale</h4>
+          <p><b><?=$data['total_for_sale']?></b></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="widget-small info"><i class="icon fa fa-check fa-3x"></i>
+        <div class="info">
+          <h4>Available</h4>
+          <p><b><?=$data['available_for_sale']?></b></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="widget-small danger"><i class="icon fa fa-ban fa-3x"></i>
+        <div class="info">
+          <h4>Sold</h4>
+          <p><b><?=$data['sold']?></b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</main>
