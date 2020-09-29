@@ -48,6 +48,9 @@ class Properties extends MY_Controller {
     }
 
     public function add_remove_favourite($id){
+        if(!$this->_is_logged_in('user_id')){
+            return false;
+        }
         $user_id = $this->session->userdata('user_id');
         $user_id = 1;
         $property = $this->global_model->select_single('add_to_fav',['property_id'=>$id,'user_id'=>$user_id]);
