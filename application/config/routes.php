@@ -79,4 +79,8 @@ $route['admin/privacy-policy'] = "admin/company/privacy_policy";
 $route['admin/terms-condition'] = "admin/company/terms_condition";
 $route['admin/about'] = "admin/company/about";
 
+/*Users*/
+$route['admin/users'] = "admin/users/users";
+$route['admin/user/(:num)'] = "admin/users/user_details/$1";
+
 $route['admin/logout'] = "admin/home/logout";
