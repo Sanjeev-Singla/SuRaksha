@@ -25,8 +25,8 @@
                   <li class="sub-menu">
                     <?php if ($this->session->userdata('user_id')): ?>
                       <li>
-                        <a href="<?= base_url('update-password') ?>" class="dropdown-item">Update Password</a> 
                         <a href="<?= base_url('favourite-properties') ?>" class="dropdown-item">Favourite Properties</a> 
+                        <a href="<?= base_url('update-password') ?>" class="dropdown-item">Change Password</a> 
                         <a href="<?= base_url('logout') ?>" class="dropdown-item">Logout</a> 
                       </li>
                     <?php else: ?>

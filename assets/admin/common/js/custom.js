@@ -34,6 +34,8 @@ $(document).ready(function(){
 			$('#residential_type').show();
 			$('select[name="residence_type"]').attr("required",true);
 		}else{
+			$('#residential_type').hide();
+			$('select[name="residence_type"]').attr("required",false);
 			$('select[name="residence_type"]').removeAttr("required");
 			$('#residence_type').hide();
 		}

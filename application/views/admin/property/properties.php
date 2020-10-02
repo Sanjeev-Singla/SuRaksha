@@ -49,7 +49,7 @@
                   <td><?=$value['location']?></td>
                   <td><?=$value['price']?></td>
                   <td class="text-center">
-                    <a href="" class="btn btn-secondary btn-sm"><i class="fa fa-eye text-white"></i></a>
+                    <a href="<?= base_url('property/').$value['id']?>" target="_blank" class="btn btn-secondary btn-sm"><i class="fa fa-eye text-white"></i></a>
                     <a href="<?= base_url("admin/edit-property/").$value['id']; ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit text-white"></i></a>
                     <a href="<?= base_url("admin/delete-property/").$value['id']; ?>" class="btn btn-warning btn-sm" onClick="return confirm('Are you Sure?')">
                       <i class="fa fa-trash text-white"></i>
@@ -108,7 +108,7 @@
               <div class="col-md-2">
                 <div class="animated-radio-button">
                   <label>
-                    <input type="radio" value="Sale" name="sale_rent"><span class="label-text">Sale</span>
+                    <input type="radio" value="Sale" name="sale_rent" required><span class="label-text">Sale</span>
                   </label>
                 </div>
               </div>
@@ -222,40 +222,3 @@
   </div>
 
 </main>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#residence_type').hide();
-    $('#flat_type').hide();
-    $('#flat_bhks').hide();
-    $('#flat_aminities').hide();
-    $("select[name='property_type']").change(function(){
-      var property_type = $(this).val();
-      if (property_type == 'Residencial') {
-        $('#residence_type').show();
-      }else{
-        $('#residence_type').hide();
-      }
-    });
-
-    $("select[name='residence_type']").change(function(){
-      var residence_type = $(this).val();
-      if (residence_type == 'Flat') {
-        $('#flat_type').show();
-        $('#flat_bhks').show();
-      }else{
-        $('#flat_type').hide();
-        $('#flat_bhks').hide();
-      }
-    });
-
-    $("select[name='flat_type']").change(function(){
-      var flat_type = $(this).val();
-      if (flat_type !== 'Raw') {
-        $('#flat_aminities').show();
-      }else{
-        $('#flat_aminities').hide();
-      }
-    });
-  });
-</script>

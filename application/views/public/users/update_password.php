@@ -4,8 +4,8 @@
   <div class="container">
     <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
       <div class="col-md-9 ftco-animate pb-0 text-center">
-       <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Login <i class="fa fa-chevron-right"></i></span></p>
-       <h1 class="mb-3 bread">Login</h1>
+       <p class="breadcrumbs"><span class="mr-2"><a href="<?=base_url()?>">Home <i class="fa fa-chevron-right"></i></a></span> <span>Change Password <i class="fa fa-chevron-right"></i></span></p>
+       <h1 class="mb-3 bread">Change Password</h1>
      </div>
    </div>
  </div>
@@ -43,7 +43,7 @@
         </div>
 
         <div class="form-group">
-          <button type="submit" class="btn btn-primary py-3 px-5">Login</button>
+          <button type="submit" class="btn btn-primary py-3 px-5">Save Changes</button>
         </div>
         
       </form>

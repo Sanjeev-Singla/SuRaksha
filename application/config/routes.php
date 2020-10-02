@@ -13,7 +13,8 @@ $route['services'] = "public/services";
 
 /* Properties */
 $route['properties'] = "public/properties/properties";
-$route['properties-single/(:num)'] = "public/properties/properties_single/$1";
+$route['properties/(:num)'] = "public/properties/properties";
+$route['property/(:num)'] = "public/properties/properties_single/$1";
 $route['serach-property'] = "public/properties/serach_property";
 $route['add-remove-property/(:num)'] = "public/properties/add_remove_favourite/$1";
 
@@ -32,7 +33,8 @@ $route['contact'] = "public/contact/contact";
 $route['register'] = "user/users/register";
 $route['login'] = "user/users/login";
 $route['update-password'] = "user/common/update_password";
-$route['favourite-properties'] = "user/common/favourite_properties";
+$route['favourite-properties'] = "public/properties/favourite_properties";
+$route['favourite-properties/(:num)'] = "public/properties/favourite_properties/$1";
 $route['logout'] = "user/common/logout";
 
 /*Forgot password*/

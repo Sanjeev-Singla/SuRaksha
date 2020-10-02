@@ -136,10 +136,13 @@
    		<div class="row ftco-animate">
    			<div class="col-md-12">
    				<div class="carousel-properties owl-carousel">
-   					<?php foreach($data['properties'] as $key => $value):?>                 
+   					<?php foreach($data['properties'] as $key => $value):?>   
+                  <?php
+                     $image = (isset($data['images'][$key])?$data['images'][$key]:"default/default.jpg");
+                  ?>              
                      <div class="item">
                         <div class="property-wrap ftco-animate">
-                           <a href="#" class="img" style="background-image: url(assets/public/images/work-5.jpg);">
+                           <a href="#" class="img" style="background-image: url(assets/admin/uploads/images/properties/<?=$image?>);">
                               <div class="rent-sale">
                                  <span class="<?= strtolower($value['sale_rent'])?>"><?= $value['sale_rent']?></span>
                               </div>
@@ -148,7 +151,6 @@
                            <div class="text">
                               <ul class="property_list">
                                  <li><span class="flaticon-bed"></span><?= $value['bhk']?></li>
-                                 <li><span class="flaticon-bathtub"></span>2</li>
                                  <li><span class="flaticon-floor-plan"></span><?= $value['size']?></li>
                               </ul>
                               <h3><a href="#"><?= $value['property_title']?></a></h3>
@@ -161,7 +163,6 @@
                                     <div class="img" style="background-image: url(assets/public/images/person_1.jpg);"></div>
                                     <h3 class="ml-2">John Dorf</h3>
                                  </div>
-                                 <span class="text-right">2 weeks ago</span>
                               </div>
                            </div>
                         </div>

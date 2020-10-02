@@ -110,17 +110,18 @@ Class Global_model extends CI_Model {
         return $q->num_rows();
     }
 
-    public function join_2table($table1, $table2, $join_str, $where = array()) {
+    public function join_2table($table1, $table2, $join_str, $where = array(), $limit = False, $offset = False) {
      $q= $this->db
                 ->where($where)
                 ->from($table1)
                 ->join($table2, $join_str,'INNER')
+                ->limit($limit, $offset)
                 ->get();
         return $q->result_array();
     }
     
     public function join_3table($table1, $table2,$table3, $join_str1,$join_str2, $where = array()) {
-     $q= $this->db
+        $q= $this->db
                 ->where($where)
                 ->from($table1)
                 ->join($table2, $join_str1,'INNER')

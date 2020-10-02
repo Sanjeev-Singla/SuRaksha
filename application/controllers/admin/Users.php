@@ -31,8 +31,4 @@ class Users extends MY_Controller {
         $data['add_to_fav'] = $this->global_model->join_2table($table2,$table1,$join_str,['add_to_fav.user_id'=>$id]);
         $this->index('user_detail',$data);
     }
-
-    
-
-   
 }

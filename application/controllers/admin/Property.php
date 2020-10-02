@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Property extends MY_Controller {
 
-    private $num_rows = 2;
+    private $num_rows = 1;
 
 	public function __construct() {
         parent::__construct();
@@ -77,7 +77,7 @@ class Property extends MY_Controller {
         $this->global_model->delete("properties",['id'=>$id]);
         $images = $this->global_model->get_all("property_image",['properties_id'=>$id]);
         foreach ($images as $key => $image) {
-            unlink("./assets/admin/uploads/images/properties/".$image["property_image"]);
+            @unlink(base_url."assets/admin/uploads/images/properties/".$image["property_image"]);
         }
         $this->global_model->delete("property_image",['properties_id'=>$id]);
         $this->_class("alert_class",'green');

@@ -46,6 +46,7 @@
     </style>
 
   </head>
+  <?php $url_segement = $this->uri->segment(2);?>
   <body class="app sidebar-mini rtl">
     <!-- Navbar-->
     <header class="app-header"><a class="app-header__logo" href="index.html">Su-Raksha</a>
@@ -71,46 +72,31 @@
       </div>
       <ul class="app-menu">
            <ul class="app-menu">
-        <li><a class="app-menu__item active" href="<?= base_url('admin/home') ?>"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-envelope"></i><span class="app-menu__label">Contacts</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <li><a class="app-menu__item <?= ($url_segement == 'home')?'active':'' ?>" href="<?= base_url('admin/home') ?>"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
+        <li class="treeview"><a class="app-menu__item <?= (in_array($url_segement,['properties','sold-rented','aminities','cities']))?'active':''; ?>" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-building-o"></i><span class="app-menu__label">Property</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href="<?= base_url('admin/contact') ?>"><i class="icon fa fa-phone"></i>Contact</a></li>
+            <li><a class="treeview-item <?= ($url_segement == 'properties')?'active':'' ?>" href="<?= base_url('admin/properties') ?>"><i class="icon fa fa-home"></i>Available Properties</a></li>
+            <li><a class="treeview-item <?= ($url_segement == 'sold-rented')?'active':'' ?>" href="<?= base_url('admin/sold-rented') ?>"><i class="icon fa fa-ban"></i>Sold / Rented</a></li>
+            <li><a class="treeview-item <?= ($url_segement == 'aminities')?'active':'' ?>" href="<?= base_url('admin/aminities') ?>"><i class="icon fa fa-bed"></i>Aminities</a></li>
+            <li><a class="treeview-item <?= ($url_segement == 'cities')?'active':'' ?>" href="<?= base_url('admin/cities') ?>"><i class="icon fa fa-globe"></i>Cites</a></li>
           </ul>
         </li>
-
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-user"></i><span class="app-menu__label">Client</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <li class="treeview"><a class="app-menu__item <?= (in_array($url_segement,['users','contact','client-reviews']))?'active':''; ?>" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Users</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href="<?= base_url('admin/client-reviews') ?>"><i class="icon fa fa-star"></i>Review</a></li>
+            <li><a class="treeview-item <?= ($url_segement == 'users')?'active':'' ?>" href="<?= base_url('admin/users') ?>"><i class="icon fa fa-users"></i>Users</a></li>
+            <li><a class="treeview-item <?= ($url_segement == 'contact')?'active':'' ?>" href="<?= base_url('admin/contact') ?>"><i class="icon fa fa-phone"></i>Contact Us</a></li>
+            <li><a class="treeview-item <?= ($url_segement == 'client-reviews')?'active':'' ?>" href="<?= base_url('admin/client-reviews') ?>"><i class="icon fa fa-star"></i>Review</a></li>
           </ul>
         </li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-building-o"></i><span class="app-menu__label">Property</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <li class="treeview"><a class="app-menu__item <?= (in_array($url_segement,['about','address','social-link','terms-condition','privacy-policy']))?'active':''; ?>" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-industry"></i><span class="app-menu__label">Company</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href="<?= base_url('admin/properties') ?>"><i class="icon fa fa-home"></i>Available Properties</a></li>
-            <li><a class="treeview-item" href="<?= base_url('admin/sold-rented') ?>"><i class="icon fa fa-ban"></i>Sold / Rented</a></li>
-            <li><a class="treeview-item" href="<?= base_url('admin/aminities') ?>"><i class="icon fa fa-bed"></i>Aminities</a></li>
-            <li><a class="treeview-item" href="<?= base_url('admin/cities') ?>"><i class="icon fa fa-globe"></i>Cites</a></li>
+            <li><a class="treeview-item <?= ($url_segement == 'about')?'active':'' ?>" href="<?= base_url('admin/about') ?>"><i class="icon fa fa-user"></i>About Us</a></li>
+            <li><a class="treeview-item <?= ($url_segement == 'address')?'active':'' ?>" href="<?= base_url('admin/address') ?>"><i class="icon fa fa-address-book"></i>Address</a></li>
+            <li><a class="treeview-item <?= ($url_segement == 'social-link')?'active':'' ?>" href="<?= base_url('admin/social-link') ?>"><i class="icon fa fa-instagram"></i>Social</a></li>
+            <li><a class="treeview-item <?= ($url_segement == 'terms-condition')?'active':'' ?>" href="<?= base_url('admin/terms-condition') ?>"><i class="icon fa fa-gavel"></i>Terms & Condition</a></li>
+            <li><a class="treeview-item <?= ($url_segement == 'privacy-policy')?'active':'' ?>" href="<?= base_url('admin/privacy-policy') ?>"><i class="icon fa fa-lock"></i> Privacy & Policy</a></li>
           </ul>
         </li>
-
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-address-book"></i><span class="app-menu__label">Admin Address</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a class="treeview-item" href="<?= base_url('admin/address') ?>"><i class="icon fa fa-address-book"></i>Address</a></li>
-            <li><a class="treeview-item" href="<?= base_url('admin/social-link') ?>"><i class="icon fa fa-instagram"></i>Social</a></li>
-          </ul>
-        </li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-industry"></i><span class="app-menu__label">Company</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a class="treeview-item" href="<?= base_url('admin/terms-condition') ?>"><i class="icon fa fa-gavel"></i>Terms & Condition</a></li>
-            <li><a class="treeview-item" href="<?= base_url('admin/privacy-policy') ?>"><i class="icon fa fa-lock"></i> Privacy & Policy</a></li>
-            <li><a class="treeview-item" href="<?= base_url('admin/about') ?>"><i class="icon fa fa-user"></i>About Us</a></li>
-          </ul>
-        </li>
-       <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-building-o"></i><span class="app-menu__label">All Users</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a class="treeview-item" href="<?= base_url('admin/users') ?>"><i class="icon fa fa-home"></i>Users</a></li>
-          </ul>
-        </li>
-        
       </ul>
       </ul>
     </aside>

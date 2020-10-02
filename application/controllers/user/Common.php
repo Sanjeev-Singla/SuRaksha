@@ -8,7 +8,6 @@ class Common extends MY_Controller {
         if(!$this->_is_logged_in('user_id')){
             _redirect('login');
         }
-
 	}
 
 	public function index($load_view,$title="", $description="", $keyword="", $data = []){
@@ -58,20 +57,9 @@ class Common extends MY_Controller {
                 }
             }
         }else{
-            $this->index('update_password','Su-Raksha Update Password','');
+            $this->index('update_password','Su-Raksha - Change Password','');
         }
     }
-
-     public function favourite_properties(){
-        $table1 = "properties";
-        $table2 = "add_to_fav";
-        $join_str = "properties.id = add_to_fav.property_id";
-        $data = $this->global_model->join_2table($table2,$table1,$join_str,["add_to_fav.user_id"=>$this->_is_logged_in("user_id")]);
-       
-        $this->index('favourite_properties','Su-Raksha Favourite Properties',$data);
-    }
-
-   
 
     public function logout(){
         $this->session->unset_userdata('user_id');

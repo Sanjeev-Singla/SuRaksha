@@ -13,14 +13,14 @@ $(document).ready(function(){
 					window.location.replace(base_url+"/login");
 					return true;
 				}
+				data = JSON.parse(data);
+				$($class_val).attr('class',data.class);
 				if (class_val == 'fa fa-heart-o') {
-					$(this).html("<i class='fa fa-heart text-danger'></i>");
-					$(this).attr("title","Remove From Favourite");
+					$($class_val).attr("title","Remove From Favourite");
 				}else{
-					$(this).html("<i class='fa fa-heart-o'></i>");
-					$(this).attr("title","Add to Favourite");
+					$($class_val).attr("title","Add to Favourite");
 				}
-				alert(data);
+				alert(data.message);
 			},
 			error:function(){
 				alert('Upble to Add!')

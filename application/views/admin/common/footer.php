@@ -11,6 +11,7 @@
       $('.bs-component [data-toggle="popover"]').popover();
       $('.bs-component [data-toggle="tooltip"]').tooltip();
     </script>
+    
   </body>
    <?php
     if ($message = $this->session->flashdata('alert')) {

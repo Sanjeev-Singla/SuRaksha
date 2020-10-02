@@ -88,10 +88,13 @@
  			</div>
  		</div>
  		<div class="row">
- 			<?php foreach($data as $key => $value):?>
+ 			<?php foreach($data['properties'] as $key => $value):?>
+ 				<?php
+ 					$image = (isset($data['images'][$key])?$data['images'][$key]:"default/default.jpg");
+ 				?>
  				<div class="col-md-4">
  					<div class="property-wrap ftco-animate">
- 						<a href="<?= base_url('properties-single/').$value['id']?>" class="img" style="background-image: url(assets/public/images/work-1.jpg);">
+ 						<a href="<?= base_url('property/').$value['id']?>" class="img" style="background-image: url(assets/admin/uploads/images/properties/<?=$image?>);">
  							<div class="rent-sale">
  								<span class="<?= strtolower($value['sale_rent'])?>"><?=$value['sale_rent']?></span>
  							</div>
@@ -99,19 +102,17 @@
  						</a>
  						<div class="text">
  							<ul class="property_list">
- 								<li><span class="flaticon-bed"></span><?=$value['bhk']?></li>
- 								<li><span class="flaticon-bathtub"></span>2</li>
+ 								<li><span class="flaticon-bed"></span><?=$value['bhk']?> BHK</li>
  								<li><span class="flaticon-floor-plan"></span><?=$value['size']?></li>
- 								<div class="pull-right btn" property-id="<?=$value['id']?>" id="add_to_favourite" style="font-size: 25px;" data-toggle="tooltip" data-placement="top" title="Add to Favourite"><i class="fa fa-heart-o"></i></div>
+ 								<div class="pull-right btn" property-id="<?=$value['id']?>" id="add_to_favourite" style="font-size: 25px;" data-toggle="tooltip" data-placement="top" title="Add to Favourite"><i class="fa <?= (in_array($value['id'], $data['fav_props']))?'fa-heart text-danger':'fa-heart-o' ?>"></i></div>
  							</ul>
  							<h3><a href="#"><?=$value['property_title']?></a></h3>
  							<span class="location"><?=$value['location']?></span>
  							<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
  								<div class="d-flex align-items-center">
  									<div class="img" style="background-image: url(assets/public/images/person_1.jpg);"></div>
- 									<h3 class="ml-2">John Dorf</h3>
+ 									<h3 class="ml-2">Admin</h3>
  								</div>
- 								<span class="text-right">2 weeks ago</span>
  							</div>
  						</div>
  					</div>
@@ -121,7 +122,7 @@
  		<div class="row mt-5">
  			<div class="col text-center">
  				<div class="block-27">
- 					<ul>
+ 					<!-- <ul>
  						<li><a href="#">&lt;</a></li>
  						<li class="active"><span>1</span></li>
  						<li><a href="#">2</a></li>
@@ -129,7 +130,8 @@
  						<li><a href="#">4</a></li>
  						<li><a href="#">5</a></li>
  						<li><a href="#">&gt;</a></li>
- 					</ul>
+ 					</ul> -->
+ 					<?=	$data['links_pagination']; ?>
  				</div>
  			</div>
  		</div>

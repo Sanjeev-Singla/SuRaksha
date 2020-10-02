@@ -8,7 +8,6 @@ class Users extends MY_Controller {
         if($this->_is_logged_in('user_id')){
             _redirect('/');
         }
-
 	}
 
 	public function index($load_view,$title="", $data = [], $description="", $keyword=""){

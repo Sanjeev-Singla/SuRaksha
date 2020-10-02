@@ -91,7 +91,35 @@ class MY_Controller extends CI_Controller {
         ];
         $this->pagination->initialize($config);
         return $this->pagination->create_links();
-    
+    }
+
+    public function _properties_pagination($url, $per_page, $total_rows, $url_seg) {
+        $this->load->library('pagination');
+        $config = [
+            'base_url' => base_url($url),
+            'per_page' => $per_page,
+            'total_rows' => $total_rows,
+            'full_tag_open' => "<ul>",
+            'full_tag_close' => '</ul>',
+            'next_link' => '>',
+            'prev_link' => '<',
+            'uri_segment' => $url_seg,
+            'first_tag_open' => '<li>',
+            'first_tag_close' => '</li>',
+            'last_tag_open' => '<li>',
+            'last_tag_close' => '</li>',
+            'next_tag_open' => '<li>',
+            'next_tag_close' => '</li>',
+            'prev_tag_open' => '<li>',
+            'prev_tag_close' => '</li>',
+            'num_tag_open' => '<li>',
+            'num_tag_close' => '</li>',
+            'cur_tag_open' => "<li class='active'><a>",
+            'cur_tag_close' => '</a></li>',
+            'display_pages' => TRUE,
+        ];
+        $this->pagination->initialize($config);
+        return $this->pagination->create_links();
     }
 
 }
