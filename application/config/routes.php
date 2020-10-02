@@ -32,6 +32,7 @@ $route['contact'] = "public/contact/contact";
 $route['register'] = "user/users/register";
 $route['login'] = "user/users/login";
 $route['update-password'] = "user/common/update_password";
+$route['favourite-properties'] = "user/common/favourite_properties";
 $route['logout'] = "user/common/logout";
 
 /*Forgot password*/
