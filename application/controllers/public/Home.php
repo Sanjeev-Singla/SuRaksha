@@ -21,6 +21,9 @@ class Home extends MY_Controller {
     public function home(){
         $data['properties'] = $this->global_model->select_all('properties',['status'=>0],9);
         $data['mohali_count'] = $this->global_model->count_rows('properties',['city'=>'Mohali','status'=>0]);
+        $data['chandigarh_count'] = $this->global_model->count_rows('properties',['city'=>'Chandigarh','status'=>0]);
+        $data['new_chandigarh_count'] = $this->global_model->count_rows('properties',['city'=>'New Chandigarh','status'=>0]);
+        $data['zirakpur_count'] = $this->global_model->count_rows('properties',['city'=>'Zirakpur','status'=>0]);
         $data['client_reviews'] = $this->global_model->select_all('client_reviews',[],9);
 
         $data['images'] = [];

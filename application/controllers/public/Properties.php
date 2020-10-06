@@ -55,12 +55,16 @@ class Properties extends MY_Controller {
     }
 
     public function properties_single($id){
-        if($data=$this->input->post()){
-
-        }else{
-            $data=$this->global_model->select_single('properties',['id'=>$id]);
-            $this->index('properties_single','Su-Raksha','','',$data);
+        $aminities = [];
+        $data = $this->global_model->select_single('properties',['id'=>$id]);
+        $data['aminities'] = explode(",", $data['aminities']);
+        foreach ($data['aminities'] as $key => $value) {
+            $aminity = $this->global_model->select_single('aminities',['id'=>$value]);
+            $aminities[] = $aminity['aminities'];
         }
+        $data['aminities'] = $aminities;
+        $data['images'] = $this->global_model->get_all('property_image',['properties_id'=>$id]);
+        $this->index('properties_single','Su-Raksha','','',$data);
     }
 
     public function add_remove_favourite($id){

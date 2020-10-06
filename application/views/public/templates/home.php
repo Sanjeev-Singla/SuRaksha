@@ -183,30 +183,38 @@
    			</div>
    		</div>
    		<div class="row">
-   			<div class="col-md-4">
+   			<div class="col-md-3">
    				<a href="#" class="search-place img" style="background-image: url(assets/public/images/place-1.jpg);">
    					<div class="desc">
-   						<h3><span>Miami</span></h3>
-   						<span>24 Properties</span>
+   						<h3><span>Chandigarh</span></h3>
+   						<span><?=$data['chandigarh_count']?> Properties</span>
    					</div>
    				</a>
    			</div>
-   			<div class="col-md-4">
+   			<div class="col-md-3">
    				<a href="#" class="search-place img" style="background-image: url(assets/public/images/place-2.jpg);">
    					<div class="desc">
-   						<h3><span>Chicago</span></h3>
-   						<span>20 Properties</span>
+   						<h3><span>New Chandigarh</span></h3>
+   						<span><?=$data['new_chandigarh_count']?> Properties</span>
    					</div>
    				</a>
    			</div>
-   			<div class="col-md-4">
+   			<div class="col-md-3">
    				<a href="#" class="search-place img" style="background-image: url(assets/public/images/place-3.jpg);">
    					<div class="desc">
-   						<h3><span>Illinoi</span></h3>
-   						<span>15 Properties</span>
+   						<h3><span>Mohali</span></h3>
+   						<span><?=$data['mohali_count']?> Properties</span>
    					</div>
    				</a>
    			</div>
+            <div class="col-md-3">
+               <a href="#" class="search-place img" style="background-image: url(assets/public/images/place-3.jpg);">
+                  <div class="desc">
+                     <h3><span>Zirakpur</span></h3>
+                     <span><?=$data['zirakpur_count']?> Properties</span>
+                  </div>
+               </a>
+            </div>
    		</div>
    	</div>
    </section>
